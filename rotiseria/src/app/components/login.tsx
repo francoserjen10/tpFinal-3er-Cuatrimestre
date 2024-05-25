@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
@@ -17,14 +17,13 @@ export default function Login() {
 
   const handleChange = (e: any) => {
     const { name, value } = e.target;
-    console.log("handleChange",name)
-    console.log("handleChange",value)
+    console.log("handleChange name", name);
+    console.log("handleChange value", value);
     setUsuario((prevState) => ({
       ...prevState,
       [name]: value,
     }));
-    console.log("setUsuario",value)
-
+    console.log("setUsuario", value);
   };
 
   const handleLogin = async () => {
@@ -32,15 +31,18 @@ export default function Login() {
       email: usuario.email,
       password: usuario.password,
     };
-
     const loginExitoso = await login(body);
     if (loginExitoso) {
       const userData = await getInformacionUsuario();
-      if (userData?.role === 1) {
-        router.push("./administrador");
+      if (userData?.rolId === 1) {
+        // router.push("./administrador");
+        console.log("/administrador");
       } else {
-        router.push("./jugador");
+        // router.push("./jugador");
+        console.log("/jugador");
       }
+    } else {
+      alert("Login fallido. Por favor, verifica tus credenciales.");
     }
   };
 
