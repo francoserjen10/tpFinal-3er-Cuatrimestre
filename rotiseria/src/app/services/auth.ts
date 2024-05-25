@@ -1,23 +1,19 @@
 "use client"
-import { jwtDecode } from 'jwt-decode';
 import clienteAxios from './axios';
 
 export async function login(body: { email: string; password: string }): Promise<boolean> {
     try {
-        const response = await clienteAxios.post('/login', body);
-
+        const response = await clienteAxios.post("/access/loginAccess", body);
         const token = response.data.accessToken;
-
-        //  Local storage es un objeto que tienen los navegadores para almacenar informacion(local storage != session storage)
-        localStorage.setItem('accessToken', token);
-
+        localStorage.setItem("accessToken", token);
         return true;
-    } catch (error) {
+    } catch (e) {
+        alert("error en auths front");
         return false;
     }
 }
 
-export const getInformacionUsuario = async (): Promise<{ name: string; lastName: string; role: number }> => {
+export const getInformacionUsuario = async (): Promise<{ email: string; rolId: number }> => {
     const response = await clienteAxios.get("/usuarios/info");
     return response.data;
 }
