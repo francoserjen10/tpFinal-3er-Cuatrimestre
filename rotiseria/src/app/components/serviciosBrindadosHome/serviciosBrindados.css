@@ -1,0 +1,23 @@
+.serviciosContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* margin: 1rem; */
+    border-top: 2px solid #ac2424;
+    border-bottom: 2px solid #ac2424;
+    margin: 3rem 0;
+    
+    & h2{
+        padding: 1.5rem;
+        font-size: 35px;
+        color:#ac2424;
+    }
+    
+    & p{
+        text-align: center;
+        padding: 0.5rem 5rem 2rem 5rem;
+        font-size: 20px;
+
+    }
+}

@@ -1,0 +1,44 @@
+.tituloRotiseria{
+    text-align: center;
+    margin-top: 40px;
+    font-size: 40px;
+    background-color:#d3d1be ;
+    padding-top: 15px;
+    color:#ac2424;
+}
+
+.containerInfo{
+    display: flex;
+    flex-direction: row;
+    background-color: #d3d1be;
+    color: #ac2424;
+    padding: 2rem 2rem;
+    margin-top: -10px;
+}
+
+.divInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    padding: .5rem;
+    text-align:justify;
+
+    & p{
+        font-size: 20px;
+        line-height: 1.5;
+    }
+}
+
+.divImagen{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: .5rem;
+} 
+.imagen {
+    border-radius: 10px;
+    width: 700px;
+    height: 350px;
+}
