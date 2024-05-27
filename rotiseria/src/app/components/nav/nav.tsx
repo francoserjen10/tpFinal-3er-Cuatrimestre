@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import './nav.css';
 import React, { useState } from 'react';
-import Example from '../formularioSaliente/formularioSaliente';
+import FormSaliente from '../formularioSaliente/formularioSaliente';
 
 export const Nav = () => {
     const [showForm, setShowForm] = useState<boolean>(false);
@@ -30,7 +30,7 @@ export const Nav = () => {
                 </li>
             </ul>
             <div className='botonSesion'>
-                <Example /> {/* Usa el componente Example como un componente aquí */}
+                <FormSaliente /> {/* Usa el componente Example como un componente aquí */}
             </div>
            
         </nav>
