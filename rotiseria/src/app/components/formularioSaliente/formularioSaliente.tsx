@@ -1,27 +1,54 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import Modal from 'react-bootstrap/Modal';
 
-const FormSaliente: React.FC = () => {
-  const [showForm, setShowForm] = useState<boolean>(false);
+function Example() {
+  const [show, setShow] = useState(false);
 
-  const handleButtonClick = () => {
-    setShowForm(true);
-  };
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   return (
-    <div>
-      <button onClick={handleButtonClick}>Mostrar Formulario</button>
+    <>
+      <Button variant="primary" onClick={handleShow}>
+        Iniciar Sesion
+      </Button>
 
-      {showForm && (
-        <form>
-          <label htmlFor="name">Nombre:</label>
-          <input type="text" id="name" name="name" /><br /><br />
-          <label htmlFor="email">Email:</label>
-          <input type="email" id="email" name="email" /><br /><br />
-          <input type="submit" value="Enviar" />
-        </form>
-      )}
-    </div>
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Modal heading</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form>
+            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+              <Form.Label>Email address</Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="name@example.com"
+                autoFocus
+              />
+            </Form.Group>
+            <Form.Group
+              className="mb-3"
+              controlId="exampleForm.ControlTextarea1"
+            >
+              <Form.Label>Example textarea</Form.Label>
+              <Form.Control as="textarea" rows={3} />
+            </Form.Group>
+          </Form>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleClose}>
+            Save Changes
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </>
   );
-};
+}
 
-export default FormSaliente;
+export default Example;

@@ -1,33 +1,66 @@
-
-.menu{
-    background-color:#ac2424;
+.menu {
+    background-color: #ac2424;
     height: 55px;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
-.menu .items{
+.menu .items {
     display: flex;
     list-style: none;
     align-items: center;
     margin: 0;
-
+    padding: 0;
 }
 
+.menu .items li {
+    margin-right: 15px;
+    transition: all 0.3s ease; /* Transición para suavizar el efecto */
+}
 
-
-.menu .items .links{
+.menu .items .links {
     padding: 7px 13px;
-    text-decoration: none ;
+    text-decoration: none;
     font-size: 18px;
-    display: block;
-    color: white ;
+    color: white;
     text-align: center;
-    
+    display: block;
+    transition: font-size 0.3s ease, color 0.3s ease; /* Transición para suavizar el cambio de tamaño y color */
 }
 
-.botonSesion{
-    padding-left: 500px;
+.menu .items li:hover .links {
+    font-size: 20px; /* Tamaño de la letra agrandado */
+    color: yellow; /* Nuevo color del texto */
+}
+
+.botonSesion {
+    position: absolute;
+    right: 20px; /* Ajusta según sea necesario */
+}
+
+.botonSesion button {
+    background-color: #c22b2b; /* Color de fondo del botón */
+    color: white; /* Color del texto */
+    border: none; /* Eliminar borde predefinido */
+    padding: 10px 20px; /* Espaciado interno del botón */
+    font-size: 16px; /* Tamaño de la fuente del texto del botón */
+    border-radius: 5px; /* Esquinas redondeadas */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+}
+
+.botonSesion button:hover {
+    background-color: rgb(139, 30, 30); /* Color de fondo más oscuro al pasar el cursor */
+    transition: background-color 0.7s ease 0.05s;
+}
+
+.botonSesion button:focus {
+    outline: none; /* Elimina el borde de enfoque predefinido */
+    box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.5); /* Añade un sombreado de enfoque */
+}
+
+.menu .items li:hover ~  .delayed-button {
+    opacity: 1;
 }
