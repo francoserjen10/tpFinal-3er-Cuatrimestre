@@ -17,13 +17,13 @@ export const Nav = () => {
                     <Link className='links' href="/home">INICIO</Link>
                 </li>
                 <li>
-                    <Link className='links' href="">QUIENES SOMOS</Link>
+                    <Link className='links' href="/home">QUIENES SOMOS</Link>
                 </li>
                 <li>
-                    <Link className='links' href="">MENUS</Link>
+                    <Link className='links' href="/home">MENUS</Link>
                 </li>
                 <li>
-                    <Link className='links' href="">¿PREGUNTAS?</Link>
+                    <Link className='links' href="/home">¿PREGUNTAS?</Link>
                 </li>
                 <li>
                     <Link className='links' href="/home#linkcontacto">CONTACTENOS</Link>
