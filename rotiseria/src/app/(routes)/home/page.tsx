@@ -1,12 +1,23 @@
 "use client";
+
+import { Contacto } from "@/app/components/contacto/contacto";
+import { Info } from "@/app/components/infoRotiseria/infoRotiseria";
+import { Logo } from "@/app/components/logo/logo";
+import { Nav } from "@/app/components/nav/nav";
+import { ServiciosBrindados } from "@/app/components/serviciosBrindadosHome/serviciosBrindados";
+
 // import { withRoles } from "@/app/components/HOC/withRoles";
 
 const Page = () => {
   return (
-    // Es pagina de prueba para el ruteo
-    <div>
-      <h1>Home</h1>
-    </div>
+    <>
+      <Logo></Logo>
+
+      <Nav></Nav>
+      <Info></Info>
+      <ServiciosBrindados></ServiciosBrindados>
+      <Contacto></Contacto>
+    </>
   );
 };
 
