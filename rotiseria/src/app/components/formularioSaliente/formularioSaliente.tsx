@@ -30,13 +30,10 @@ function FormSaliente() {
 
   const handleChange = (e: any) => {
     const { name, value } = e.target;
-    console.log("handleChange name", name);
-    console.log("handleChange value", value);
     setUsuario((prevState) => ({
       ...prevState,
       [name]: value,
     }));
-    console.log("setUsuario", value);
   };
 
   const handleLogin = async () => {
@@ -48,11 +45,9 @@ function FormSaliente() {
     if (loginExitoso) {
       const userData = await getInformacionUsuario();
       if (userData?.rolId === 1) {
-        // router.push("./administrador");
-        console.log("/administrador");
+        router.push("/admin");
       } else {
-        // router.push("./jugador");
-        console.log("/jugador");
+        router.push("/user");
       }
     } else {
       alert("Login fallido. Por favor, verifica tus credenciales.");
