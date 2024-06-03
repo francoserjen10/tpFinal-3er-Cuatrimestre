@@ -1,4 +1,9 @@
-import { getInformacionUsuario, login } from "@/app/services/auth";
+import { IUsuario } from "@/app/model/user.model";
+import {
+  getInformacionUsuario,
+  login,
+  registerUser,
+} from "@/app/services/auth";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
@@ -28,9 +33,17 @@ function FormSaliente() {
 
   const router = useRouter();
 
-  const handleChange = (e: any) => {
+  const handleChangeLogin = (e: any) => {
     const { name, value } = e.target;
     setUsuario((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+  const handleChangeRegister = (e: any) => {
+    const { name, value } = e.target;
+    setUsuarioRegister((prevState) => ({
       ...prevState,
       [name]: value,
     }));
@@ -52,6 +65,18 @@ function FormSaliente() {
     } else {
       alert("Login fallido. Por favor, verifica tus credenciales.");
     }
+  };
+
+  // ----------------- BOTON DE REGISTRO -----------------
+  const handleRegister = async () => {
+    const user: IUsuario = {
+      name: usuarioRegister.name,
+      lastName: usuarioRegister.lastName,
+      dni: usuarioRegister.dni,
+      email: usuarioRegister.email,
+      password: usuarioRegister.password,
+    };
+    const registerExitoso = await registerUser(user);
   };
 
   const toggleForms = (val: string) => {
@@ -86,7 +111,7 @@ function FormSaliente() {
                   name="email"
                   required
                   value={usuario.email}
-                  onChange={(e) => handleChange(e)}
+                  onChange={(e) => handleChangeLogin(e)}
                 />
               </Form.Group>
 
@@ -99,7 +124,7 @@ function FormSaliente() {
                   name="password"
                   required
                   value={usuario.password}
-                  onChange={(e) => handleChange(e)}
+                  onChange={(e) => handleChangeLogin(e)}
                 />
               </Form.Group>
             </Form>
@@ -116,7 +141,7 @@ function FormSaliente() {
                   name="name"
                   required
                   value={usuarioRegister.name}
-                  onChange={(e) => handleChange(e)}
+                  onChange={(e) => handleChangeRegister(e)}
                 />
               </Form.Group>
 
@@ -129,7 +154,7 @@ function FormSaliente() {
                   name="lastName"
                   required
                   value={usuarioRegister.lastName}
-                  onChange={(e) => handleChange(e)}
+                  onChange={(e) => handleChangeRegister(e)}
                 />
               </Form.Group>
 
@@ -142,7 +167,7 @@ function FormSaliente() {
                   name="dni"
                   required
                   value={usuarioRegister.dni}
-                  onChange={(e) => handleChange(e)}
+                  onChange={(e) => handleChangeRegister(e)}
                 />
               </Form.Group>
 
@@ -154,8 +179,8 @@ function FormSaliente() {
                   autoFocus
                   name="email"
                   required
-                  value={usuario.email}
-                  onChange={(e) => handleChange(e)}
+                  value={usuarioRegister.email}
+                  onChange={(e) => handleChangeRegister(e)}
                 />
               </Form.Group>
 
@@ -167,22 +192,40 @@ function FormSaliente() {
                   autoFocus
                   name="password"
                   required
-                  value={usuario.password}
-                  onChange={(e) => handleChange(e)}
+                  value={usuarioRegister.password}
+                  onChange={(e) => handleChangeRegister(e)}
                 />
               </Form.Group>
             </Form>
           )}
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={() => toggleForms("register")}>
-            Registrarse
-          </Button>
 
-          <Button variant="primary" onClick={() => handleLogin()}>
-            Ingresar
-          </Button>
-        </Modal.Footer>
+        {register && (
+          <Modal.Footer>
+            <Button variant="primary" onClick={() => handleRegister()}>
+              Registrarse
+            </Button>
+            <Button variant="light" onClick={() => handleClose()}>
+              Cancelar
+            </Button>
+            <Button variant="secondary" onClick={() => toggleForms("login")}>
+              Login
+            </Button>
+          </Modal.Footer>
+        )}
+        {!register && (
+          <Modal.Footer>
+            <Button variant="secondary" onClick={() => toggleForms("register")}>
+              Registrarse
+            </Button>
+            <Button variant="light" onClick={() => handleClose()}>
+              Cancelar
+            </Button>
+            <Button variant="primary" onClick={() => handleLogin()}>
+              Ingresar
+            </Button>
+          </Modal.Footer>
+        )}
       </Modal>
     </>
   );
