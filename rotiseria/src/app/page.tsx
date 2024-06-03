@@ -1,6 +1,23 @@
-'use client'
+"use client";
+import { useEffect } from "react";
+import { useRouter } from 'next/navigation';
+
+export default function Home() {
+  const router = useRouter();
+  useEffect(() => {
+    router.push("/home");
+  }, []);
+  
+  return (
+    <></>
+  );
+}
+
+
+
+
+/*'use client'
 import "bootstrap/dist/css/bootstrap.min.css";
-import Login from "./components/login";
 import { Nav } from "./components/nav/nav";
 import { Logo } from "./components/logo/logo";
 import { Info } from "./components/infoRotiseria/infoRotiseria";
@@ -21,4 +38,4 @@ export default function Home() {
 
 
   );
-}
+}*/

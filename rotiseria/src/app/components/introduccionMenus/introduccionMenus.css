@@ -1,0 +1,44 @@
+.introduccion {
+    background-color: rgb(156, 156, 156);
+    padding: 10px;
+}
+
+.contenedorEleccion {
+    display: inline-block;
+    height: 75px;
+    width: 170px;
+    border-radius: 8px;
+    padding-left: 7px;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 2px 60px 30px 3px;
+    text-align: left;
+    overflow: hidden;
+    margin: 10px;
+    border: none;
+    cursor: pointer; /* Añade un cursor de puntero para indicar que es un botón */
+}
+
+.contenedorEleccion:hover {
+    border: 1px solid rgb(0, 0, 0); /* Añade un borde rojo cuando se pasa el cursor sobre el botón */
+}
+
+.estiloCarnes {
+    background-color: rgb(255, 165, 46);
+}
+
+.estiloBebidas {
+    background-color: white;
+}
+
+.estiloPastas {
+    background-color: rgb(133, 165, 57);
+}
+
+.regularImagen {
+    height: 70px;
+    width: 80px;
+    margin-left: 85px;
+    margin-top: -30px;
+    object-fit: cover
+}

@@ -1,9 +1,9 @@
+'use client'
 import Link from 'next/link';
-import './nav.css';
+import './navNormal.css';
 import React, { useState } from 'react';
-import FormSaliente from '../formularioSaliente/formularioSaliente';
 
-export const Nav = () => {
+export const NavNormal = () => {
     const [showForm, setShowForm] = useState<boolean>(false);
 
     const handleButtonClick = () => {
@@ -17,22 +17,18 @@ export const Nav = () => {
                     <Link className='links' href="/home">INICIO</Link>
                 </li>
                 <li>
-                    <Link className='links' href="/cardempleos">QUIENES SOMOS</Link>
+                    <Link className='links' href="/">QUIENES SOMOS</Link>
                 </li>
                 <li>
-                    <Link className='links' href="/cardcandidatos">MENUS</Link>
+                    <Link className='links' href="/menus">MENUS</Link>
                 </li>
                 <li>
-                    <Link className='links' href="/cardturismo">¿PREGUNTAS?</Link>
+                    <Link className='links' href="/">¿PREGUNTAS?</Link>
                 </li>
                 <li>
                     <Link className='links' href="/home#linkcontacto">CONTACTENOS</Link>
                 </li>
             </ul>
-            <div className='botonSesion'>
-                <FormSaliente /> {/* Usa el componente Example como un componente aquí */}
-            </div>
-           
         </nav>
     );
 };
