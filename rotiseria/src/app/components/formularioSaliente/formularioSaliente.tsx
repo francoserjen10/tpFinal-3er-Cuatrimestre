@@ -77,6 +77,11 @@ function FormSaliente() {
       password: usuarioRegister.password,
     };
     const registerExitoso = await registerUser(user);
+    if (registerExitoso) {
+      alert("Usuario creado con exito")
+    } else {
+      alert("Error, no se creo el usuario")
+    }
   };
 
   const toggleForms = (val: string) => {

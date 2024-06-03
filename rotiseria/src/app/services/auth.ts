@@ -5,9 +5,17 @@ import clienteAxios from './axios';
 export async function login(body: { email: string; password: string }): Promise<boolean> {
     try {
         const response = await clienteAxios.post("/access/loginAccess", body);
-        const token = response.data.accessToken;
-        localStorage.setItem("accessToken", token);
-        return true;
+        console.log("response", response)
+
+        if (response && response.data && response.data.accessToken) {
+            const token = response.data.accessToken;
+            localStorage.setItem("accessToken", token);
+            return true;
+        } else {
+            console.log("Error no accedio")
+            return false
+        }
+
     } catch (e) {
         alert("error en auths front");
         return false;
