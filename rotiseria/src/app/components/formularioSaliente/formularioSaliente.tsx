@@ -9,19 +9,10 @@ import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
-// Sweet alert
-import { useEffect } from "react";
 import Swal from "sweetalert2";
 
 function FormSaliente() {
-  // Sweet alert
-  // useEffect(() => {
-  //   mostrarAlert();
-  // }, []);
-
   const mostrarAlert = () => {
-    // Swal.fire("Mensaje simple");
-
     Swal.fire({
       icon: "success",
       title: "Registrado",
