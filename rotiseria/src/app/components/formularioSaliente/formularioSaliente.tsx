@@ -94,6 +94,7 @@ function FormSaliente() {
         email: "",
         password: "",
       });
+      toggleForms("login");
     } else {
       alert("Error, no se creo el usuario");
     }
