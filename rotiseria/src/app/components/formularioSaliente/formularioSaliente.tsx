@@ -87,6 +87,13 @@ function FormSaliente() {
     const registerExitoso = await registerUser(user);
     if (registerExitoso) {
       mostrarAlert();
+      setUsuarioRegister({
+        name: "",
+        lastName: "",
+        dni: 0,
+        email: "",
+        password: "",
+      });
     } else {
       alert("Error, no se creo el usuario");
     }
