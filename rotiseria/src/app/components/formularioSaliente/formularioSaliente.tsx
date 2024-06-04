@@ -9,8 +9,26 @@ import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
+// Sweet alert
+import { useEffect } from "react";
+import Swal from "sweetalert2";
 
 function FormSaliente() {
+  // Sweet alert
+  // useEffect(() => {
+  //   mostrarAlert();
+  // }, []);
+
+  const mostrarAlert = () => {
+    // Swal.fire("Mensaje simple");
+
+    Swal.fire({
+      icon: "success",
+      title: "Registrado",
+      html: "<p>Usuario <b>Nombre del usuario creado</b> creado con exito!</p>",
+    });
+  };
+
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -77,9 +95,9 @@ function FormSaliente() {
     };
     const registerExitoso = await registerUser(user);
     if (registerExitoso) {
-      alert("Usuario creado con exito")
+      mostrarAlert();
     } else {
-      alert("Error, no se creo el usuario")
+      alert("Error, no se creo el usuario");
     }
   };
 
