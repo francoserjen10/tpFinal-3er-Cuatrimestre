@@ -1,15 +1,15 @@
-'use client'
-import Link from 'next/link';
-import './navHome.css';
-import React, { useState } from 'react';
-import FormSaliente from '../formularioSaliente/formularioSaliente';
+"use client";
+import Link from "next/link";
+import "./navHome.css";
+import React, { useState } from "react";
+import FormSaliente from "../formularioSaliente/formularioSaliente";
 
 export const NavHome = () => {
-    const [showForm, setShowForm] = useState<boolean>(false);
+  const [showForm, setShowForm] = useState<boolean>(false);
 
-    const handleButtonClick = () => {
-        setShowForm(true);
-    };
+  const handleButtonClick = () => {
+    setShowForm(true);
+  };
 
     return (
         <nav className="menu">
@@ -37,3 +37,4 @@ export const NavHome = () => {
         </nav>
     );
 };
+

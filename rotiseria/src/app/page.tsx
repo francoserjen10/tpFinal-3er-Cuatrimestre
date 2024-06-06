@@ -7,14 +7,9 @@ export default function Home() {
   useEffect(() => {
     router.push("/home");
   }, []);
-  
-  return (
-    <></>
-  );
+
+  return <></>;
 }
-
-
-
 
 /*'use client'
 import "bootstrap/dist/css/bootstrap.min.css";
