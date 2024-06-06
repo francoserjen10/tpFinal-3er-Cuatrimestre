@@ -11,39 +11,30 @@ export const NavHome = () => {
     setShowForm(true);
   };
 
-  return (
-    <nav className="menu">
-      <ul className="items">
-        <li>
-          <Link className="links" href="/home">
-            INICIO
-          </Link>
-        </li>
-        <li>
-          <Link className="links" href="/home">
-            QUIENES SOMOS
-          </Link>
-        </li>
-        <li>
-          <Link className="links" href="/menus">
-            MENUS
-          </Link>
-        </li>
-        <li>
-          <Link className="links" href="/home">
-            ¿PREGUNTAS?
-          </Link>
-        </li>
-        <li>
-          <Link className="links" href="/home#linkcontacto">
-            CONTACTENOS
-          </Link>
-        </li>
-      </ul>
-      <div className="botonSesion">
-        <FormSaliente />{" "}
-        {/* Usa el componente Example como un componente aquí */}
-      </div>
-    </nav>
-  );
+    return (
+        <nav className="menu">
+            <ul className="items">
+                <li>
+                    <Link className='links' href="/home">INICIO</Link>
+                </li>
+                <li>
+                    <Link className='links' href="/quienesSomos">QUIENES SOMOS</Link>
+                </li>
+                <li>
+                    <Link className='links' href="/menus">MENUS</Link>
+                </li>
+                <li>
+                    <Link className='links' href="/home">¿PREGUNTAS?</Link>
+                </li>
+                <li>
+                    <Link className='links' href="/home#linkcontacto">CONTACTENOS</Link>
+                </li>
+            </ul>
+            <div className='botonSesion'>
+                <FormSaliente /> {/* Usa el componente Example como un componente aquí */}
+            </div>
+           
+        </nav>
+    );
 };
+

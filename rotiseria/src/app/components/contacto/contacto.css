@@ -19,15 +19,18 @@
 .formulario{
     margin:30px;
     color:white;
-    text-align: center;
+    text-align: center; 
+    align-items: center;
 }
 
 .formulario input{
     background-color: rgb(238, 231, 231);
+    width: 400px;
 }
 
 .formulario textarea{
     background-color: rgb(238, 231, 231);
+    width: 400px;
 }
 
 h4 {
@@ -35,16 +38,27 @@ h4 {
 }
 
 .btn-contacto{
-    background-color: #BBDEB1;
-    border: #BBDEB1;
-    color: #ac2424;
+    background-color: #c22b2b;
+    border: #c22b2b;
+    color: white;
     width: 150px;
 }
 
 .btn-contacto:hover {
-    background-color: #8ba384;
+    background-color: rgba(255, 0, 0, 0.5);
 }
 
 .mapa{
     margin:30px;
 }
+
+figure img {
+    width: 250px; /* Aumenta el tamaño de la imagen */
+}
+.footer {
+    background-color: #c22b2b;
+    text-align: center;
+    height: 50px;
+    padding-top: 20px;
+}
+ 

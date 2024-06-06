@@ -1,22 +1,28 @@
+'use client'
 import "bootstrap/dist/css/bootstrap.min.css";
 import { NavHome } from "@/app/components/navHome/navHome";
 import { Logo } from "@/app/components/logo/logo";
-import { Info } from "@/app/components/infoRotiseria/infoRotiseria";
-import { ServiciosBrindados } from "@/app/components/serviciosBrindadosHome/serviciosBrindados";
+import Carousel from "@/app/components/carruselOfertas/carruselOfertas";
 import { Contacto } from "@/app/components/contacto/contacto";
-// import { withRoles } from "@/app/components/HOC/withRoles";
+import { FooterFinal } from "@/app/components/footer/footer";
+
+
+
 export default function Home() {
   return (
     <>
-      <Logo></Logo>
-
-      <NavHome></NavHome>
-      <Info></Info>
-      <ServiciosBrindados></ServiciosBrindados>
-      <Contacto></Contacto>
+      <Logo />
+      <NavHome />
+      <div style={{ marginTop: '0px'}}>
+        <Carousel />
+      </div>
+      <div style={{ marginTop: '20px' }}>
+        <Contacto />
+      </div>
     </>
   );
 }
-//export default Home;
-//Se agrega de esta manera para que este componente pueda llegar como parametro a la funcion de whithRoles
-// export default withRoles(Page,[1],'/' )
+
+
+
+

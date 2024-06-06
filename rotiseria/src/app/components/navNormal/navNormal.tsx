@@ -17,7 +17,7 @@ export const NavNormal = () => {
                     <Link className='links' href="/home">INICIO</Link>
                 </li>
                 <li>
-                    <Link className='links' href="/">QUIENES SOMOS</Link>
+                    <Link className='links' href="/quienesSomos">QUIENES SOMOS</Link>
                 </li>
                 <li>
                     <Link className='links' href="/menus">MENUS</Link>
