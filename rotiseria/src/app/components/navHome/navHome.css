@@ -3,9 +3,10 @@
     height: 55px;
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Centrar los elementos del menú */
     align-items: center;
-    position: relative;
+    padding: 0 20px;
+    position: relative; /* Para permitir posicionar el botón de sesión de manera absoluta */
 }
 
 .menu .items {
@@ -14,11 +15,16 @@
     align-items: center;
     margin: 0;
     padding: 0;
+    justify-content: center; /* Centrar los elementos del menú */
 }
 
 .menu .items li {
     margin-right: 15px;
-    transition: all 0.3s ease; /* Transición para suavizar el efecto */
+    transition: all 0.3s ease;
+}
+
+.menu .items li:last-child {
+    margin-right: 0; /* Remover el margen derecho del último elemento */
 }
 
 .menu .items .links {
@@ -28,39 +34,70 @@
     color: white;
     text-align: center;
     display: block;
-    transition: font-size 0.3s ease, color 0.3s ease; /* Transición para suavizar el cambio de tamaño y color */
+    transition: font-size 0.3s ease, color 0.3s ease;
 }
 
 .menu .items li:hover .links {
-    font-size: 20px; /* Tamaño de la letra agrandado */
-    color: yellow; /* Nuevo color del texto */
+    font-size: 20px;
+    color: yellow;
 }
 
 .botonSesion {
-    position: absolute;
-    right: 20px; /* Ajusta según sea necesario */
+    display: flex;
+    align-items: center;
+    position: absolute; /* Posicionar el botón de sesión de manera absoluta */
+    right: 20px; /* Ajustar la posición del botón de sesión */
 }
 
 .botonSesion button {
-    background-color: #c22b2b; /* Color de fondo del botón */
-    color: white; /* Color del texto */
-    border: none; /* Eliminar borde predefinido */
-    padding: 10px 20px; /* Espaciado interno del botón */
-    font-size: 16px; /* Tamaño de la fuente del texto del botón */
-    border-radius: 5px; /* Esquinas redondeadas */
-    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    background-color: #c22b2b;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 15px;
 }
 
 .botonSesion button:hover {
-    background-color: rgb(139, 30, 30); /* Color de fondo más oscuro al pasar el cursor */
+    background-color: rgb(139, 30, 30);
     transition: background-color 0.7s ease 0.05s;
 }
 
 .botonSesion button:focus {
-    outline: none; /* Elimina el borde de enfoque predefinido */
-    box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.5); /* Añade un sombreado de enfoque */
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.5);
 }
 
-.menu .items li:hover ~  .delayed-button {
-    opacity: 1;
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+        position: static; /* Resetear la posición del menú en vista móvil */
+    }
+
+    .menu .items {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .menu .items li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .botonSesion {
+        width: 100%;
+        justify-content: center;
+        position: static; /* Resetear la posición del botón en vista móvil */
+        margin-top: 10px; /* Agregar margen superior para espaciar del menú */
+    }
+
+    .botonSesion button {
+        width: 100%;
+        margin-left: 0;
+    }
 }
