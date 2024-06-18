@@ -5,11 +5,11 @@ import React, { useState } from "react";
 import FormSaliente from "../formularioSaliente/formularioSaliente";
 
 export const NavHome = () => {
-  const [showForm, setShowForm] = useState<boolean>(false);
+    const [showForm, setShowForm] = useState(false);
 
-  const handleButtonClick = () => {
-    setShowForm(true);
-  };
+    const handleButtonClick = () => {
+        setShowForm(true);
+    };
 
     return (
         <nav className="menu">
@@ -31,10 +31,8 @@ export const NavHome = () => {
                 </li>
             </ul>
             <div className='botonSesion'>
-                <FormSaliente /> {/* Usa el componente Example como un componente aquí */}
+                <FormSaliente />
             </div>
-           
         </nav>
     );
 };
-
