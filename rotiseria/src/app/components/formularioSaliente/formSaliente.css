@@ -1,35 +1,25 @@
-.form-saliente-slide-navbar-body {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  font-family: 'Jost', sans-serif;
-  background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
-}
-
-.form-saliente-main-slide {
+.main {
   width: 350px;
   height: 500px;
   background: red;
   overflow: hidden;
-  background: url("https://img.freepik.com/premium-vector/abstract-realistic-technology-particle-background_23-2148414765.jpg?w=740") no-repeat center/cover;
+  background: url("https://img.freepik.com/premium-vector/abstract-realistic-technology-particle-background_23-2148414765.jpg?w=740") no-repeat center/ cover;
   border-radius: 10px;
   box-shadow: 5px 20px 50px #000;
 }
 
-.form-saliente-chk {
+.main #chk {
   display: none;
 }
 
-.form-saliente-signup {
+.main .signup,
+.main .login {
   position: relative;
   width: 100%;
   height: 100%;
 }
 
-.form-saliente-label {
+.main label {
   color: #fff;
   font-size: 2.3em;
   justify-content: center;
@@ -40,7 +30,7 @@
   transition: .5s ease-in-out;
 }
 
-.form-saliente-input {
+.main input {
   width: 60%;
   height: 20px;
   background: #e0dede;
@@ -53,7 +43,7 @@
   border-radius: 5px;
 }
 
-.form-saliente-button {
+.main button {
   width: 60%;
   height: 40px;
   margin: 10px auto;
@@ -71,11 +61,11 @@
   cursor: pointer;
 }
 
-.form-saliente-button:hover {
+.main button:hover {
   background: #6d44b8;
 }
 
-.form-saliente-login {
+.main .login {
   height: 460px;
   background: #eee;
   border-radius: 60% / 10%;
@@ -83,32 +73,19 @@
   transition: .8s ease-in-out;
 }
 
-.form-saliente-login .form-saliente-label {
+.main .login label {
   color: #573b8a;
   transform: scale(.6);
 }
 
-.form-saliente-chk:checked ~ .form-saliente-login {
+.main #chk:checked ~ .login {
   transform: translateY(-500px);
 }
 
-.form-saliente-chk:checked ~ .form-saliente-login .form-saliente-label {
+.main #chk:checked ~ .login label {
   transform: scale(1);
 }
 
-.form-saliente-chk:checked ~ .form-saliente-signup .form-saliente-label {
+.main #chk:checked ~ .signup label {
   transform: scale(.6);
-}
-
-.form-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.7);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
 }

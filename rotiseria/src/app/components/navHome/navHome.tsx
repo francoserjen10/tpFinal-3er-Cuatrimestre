@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import './navHome.css';
 import React, { useState } from 'react';
-import FormSalienteNuevo from '../formularioSaliente/formSaliente';
+
 
 interface NavHomeProps {
   userName: string | null;
