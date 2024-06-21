@@ -11,4 +11,4 @@ const Page = () => {
 };
 
 //Se agrega de esta manera para que este componente pueda llegar como parametro a la funcion de whithRoles
-export default withRoles(Page, [1], "/home");
+export default withRoles(Page, [1], "/admin");

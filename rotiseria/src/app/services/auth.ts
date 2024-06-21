@@ -22,7 +22,7 @@ export async function login(body: { email: string; password: string }): Promise<
     }
 }
 
-export const getInformacionUsuario = async (): Promise<{ email: string; rolId: number }> => {
+export const getInformacionUsuario = async (): Promise<{ email: string; rolId: number; nombre: string }> => {
     const response = await clienteAxios.get("/usuarios/info");
     return response.data;
 }

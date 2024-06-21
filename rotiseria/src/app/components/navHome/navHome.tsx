@@ -1,38 +1,57 @@
-"use client";
-import Link from "next/link";
-import "./navHome.css";
-import React, { useState } from "react";
-import FormSaliente from "../formularioSaliente/formularioSaliente";
+'use client';
 
-export const NavHome = () => {
-    const [showForm, setShowForm] = useState(false);
+import Link from 'next/link';
+import './navHome.css';
+import React, { useState } from 'react';
+import FormSalienteNuevo from '../formularioSaliente/formSaliente';
 
-    const handleButtonClick = () => {
-        setShowForm(true);
-    };
+interface NavHomeProps {
+  userName: string | null;
+  setUserName: (name: string) => void;
+}
 
-    return (
-        <nav className="menu">
-            <ul className="items">
-                <li>
-                    <Link className='links' href="/home">INICIO</Link>
-                </li>
-                <li>
-                    <Link className='links' href="/quienesSomos">QUIENES SOMOS</Link>
-                </li>
-                <li>
-                    <Link className='links' href="/menus">MENUS</Link>
-                </li>
-                <li>
-                    <Link className='links' href="/home">¿PREGUNTAS?</Link>
-                </li>
-                <li>
-                    <Link className='links' href="/home#linkcontacto">CONTACTENOS</Link>
-                </li>
-            </ul>
-            <div className='botonSesion'>
-                <FormSaliente />
-            </div>
-        </nav>
-    );
+export const NavHome: React.FC<NavHomeProps> = ({ userName, setUserName }) => {
+  const [showLogin, setShowLogin] = useState(false);
+
+  const handleLoginClick = () => {
+    setShowLogin(true);
+  };
+
+  const handleClose = () => {
+    setShowLogin(false);
+  };
+
+  return (
+    <nav className="menu">
+      <ul className="items">
+        <li>
+          <Link className='links' href="/home">INICIO</Link>
+        </li>
+        <li>
+          <Link className='links' href="/quienesSomos">QUIENES SOMOS</Link>
+        </li>
+        <li>
+          <Link className='links' href="/menus">MENUS</Link>
+        </li>
+        <li>
+          <Link className='links' href="/home">¿PREGUNTAS?</Link>
+        </li>
+        <li>
+          <Link className='links' href="/home#linkcontacto">CONTACTENOS</Link>
+        </li>
+      </ul>
+      <div className='botonSesion'>
+        {userName ? (
+          <p>Hola, {userName}</p>
+        ) : (
+          <button onClick={handleLoginClick} className='links'>Iniciar Sesión</button>
+        )}
+        {showLogin && (
+          <FormSalienteNuevo setUserName={setUserName} show={showLogin} handleClose={handleClose}/>
+        )}
+      </div>
+    </nav>
+  );
 };
+
+export default NavHome;
