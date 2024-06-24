@@ -7,17 +7,19 @@ import Carousel from "@/app/components/carruselOfertas/carruselOfertas";
 import { Contacto } from "@/app/components/contacto/contacto";
 import { FooterFinal } from "@/app/components/footer/footer";
 import { useState } from "react";
-import FormSalienteNuevo from "@/app/components/formularioSaliente/formSaliente";
+import FormularioBueno from "@/app/components/formularioSaliente/formularioNuevo";
+//import FormSalienteNuevo from "@/app/components/formularioSaliente/formSaliente";
 
 export default function Home() {
-  const [userName, setUserName] = useState<string | null>(null);
+ // const [userName, setUserName] = useState<string | null>(null);
 
   return (
     <>
       <Logo />
-      <NavHome userName={userName} setUserName={setUserName}/>
+      <NavHome /*userName={userName} setUserName={setUserName}*//>
       <Carousel />
       <Contacto />
+      <FormularioBueno/>
     </>
   );
 }

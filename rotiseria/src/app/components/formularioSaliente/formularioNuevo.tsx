@@ -1,14 +1,14 @@
 import React from 'react';
 import './formSaliente.css';
 
-const FormSalienteNuevo: React.FC = () => {
+const FormularioBueno = () => {
   return (
-    <div className="main">
-      <input type="checkbox" id="chk" aria-hidden="true" />
+    <div className='main'>
+      <input type="checkbox" id="chk" />
 
       <div className="signup">
         <form>
-          <label htmlFor="chk" aria-hidden="true">Sign up</label>
+          <label htmlFor="chk">Sign up</label>
           <input type="text" name="txt" placeholder="User name" required />
           <input type="email" name="email" placeholder="Email" required />
           <input type="password" name="pswd" placeholder="Password" required />
@@ -18,7 +18,7 @@ const FormSalienteNuevo: React.FC = () => {
 
       <div className="login">
         <form>
-          <label htmlFor="chk" aria-hidden="true">Login</label>
+          <label htmlFor="chk">Login</label>
           <input type="email" name="email" placeholder="Email" required />
           <input type="password" name="pswd" placeholder="Password" required />
           <button>Login</button>
@@ -26,6 +26,6 @@ const FormSalienteNuevo: React.FC = () => {
       </div>
     </div>
   );
-}
+};
 
-export default FormSalienteNuevo;
+export default FormularioBueno;

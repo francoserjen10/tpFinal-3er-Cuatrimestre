@@ -113,7 +113,7 @@ function FormSaliente({ setUserName }: FormSalienteProps) {
   return (
     <>
       <Button variant="primary" onClick={() => handleLoginAndToggle()}>
-        Iniciar Sesión
+        INICIAR FORMULARIO
       </Button>
 
       <Modal show={show} onHide={handleClose}>
