@@ -4,5 +4,5 @@ export interface IProducto {
   description: string;
   price: number;
   categoryId: string;
-  // image: string;
+  urlImage: string;
 }
