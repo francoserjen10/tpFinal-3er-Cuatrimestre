@@ -20,7 +20,6 @@ export default function Home() {
       <NavHome /*userName={userName} setUserName={setUserName}*//>
       <Carousel />
       <Contacto />
-      <FormularioBueno/>
     </div>
     </>
   );
