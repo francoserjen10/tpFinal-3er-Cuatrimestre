@@ -60,7 +60,7 @@ export const Contacto = () => {
           </figure>
         </div>
 
-        <div className='d-flex flex-column justify-content-center formulario'>
+        <div className='contactenos d-flex flex-column justify-content-center formulario'>
           <h4>CONTACTANOS</h4>
           <form className="row g-3" id="form" onSubmit={enviarContacto}>
             <label htmlFor="validationServer01" className="form-label col-md-2">Asunto</label>
@@ -109,7 +109,7 @@ export const Contacto = () => {
         </div>
       </div>
       <div className="footer">
-        <small>&copy; 2021 <b>Rotiseria Programing</b> - Todos los Derechos Reservados.</small>
+        <small>&copy; 2024 <b>Rotiseria Programing</b> - Todos los Derechos Reservados.</small>
       </div>
     </section>
   );

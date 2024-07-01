@@ -4,18 +4,18 @@ import { NavHome } from "@/app/components/navHome/navHome";
 import { Logo } from "@/app/components/logo/logo";
 import Carousel from "@/app/components/carruselOfertas/carruselOfertas";
 import { Contacto } from "@/app/components/contacto/contacto";
-import { FooterFinal } from "@/app/components/footer/footer";
-
+import InfiniteCardSlider from "@/app/components/cardsChefs/cardsChefs";
 export default function Home() {
   return (
     <>
       <Logo />
       <NavHome />
-      <div style={{ marginTop: "20px" }}>
-        <Carousel />
+      <Carousel />
+      <div style={{marginTop: "1px"}}>
+      <InfiniteCardSlider/>
       </div>
-      <div style={{ marginTop: "20px" }}>
-        <Contacto />
+      <div style={{ marginTop: "1px" }}>
+      <Contacto />
       </div>
     </>
   );

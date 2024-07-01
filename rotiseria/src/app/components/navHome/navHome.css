@@ -49,25 +49,32 @@
     right: 20px; /* Ajustar la posición del botón de sesión */
 }
 
-.botonSesion button {
+.imagenBoton {
     background-color: #c22b2b;
-    color: white;
     border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 5px;
+    padding: 0;
+    border-radius: 50%;
     cursor: pointer;
-    margin-left: 15px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.botonSesion button:hover {
+.imagenBoton:hover {
     background-color: rgb(139, 30, 30);
     transition: background-color 0.7s ease 0.05s;
 }
 
-.botonSesion button:focus {
+.imagenBoton:focus {
     outline: none;
-    box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.5);
+}
+
+.imagenBoton > img {
+    height: 70%; /* Ajusta el tamaño de la imagen según sea necesario */
+    width: 70%; /* Ajusta el tamaño de la imagen según sea necesario */
+    border-radius: 50%; /* Hace que la imagen sea redonda */
 }
 
 @media (max-width: 768px) {
