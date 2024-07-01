@@ -15,11 +15,13 @@ export default function Home() {
 
   return (
     <>
+    <div className="divBody">
       <Logo />
       <NavHome /*userName={userName} setUserName={setUserName}*//>
       <Carousel />
       <Contacto />
       <FormularioBueno/>
+    </div>
     </>
   );
 }

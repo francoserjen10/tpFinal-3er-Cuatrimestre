@@ -8,8 +8,11 @@ export const NavHome = () => {
 
   const toggleFormulario = () => {
     console.log("Botón de sesión presionado");
-    setMostrarFormulario(!mostrarFormulario);
+    if(mostrarFormulario == true){
+      setMostrarFormulario(!mostrarFormulario);
+    }
     console.log("Estado de mostrarFormulario:", !mostrarFormulario);
+    document.getElementById("formSaliente")?.classList.toggle("hidden");
   };
 
   return (
@@ -42,7 +45,7 @@ export const NavHome = () => {
         </li>
       </ul>
       <div className="botonSesion">
-        <button onClick={toggleFormulario}>Sesión</button>
+        <button className="btnForm" onClick={toggleFormulario}>Iniciar Sesión</button>
       </div>
       {mostrarFormulario && (
         <div className={mostrarFormulario ? 'mainForm' : 'mainForm hidden'}>

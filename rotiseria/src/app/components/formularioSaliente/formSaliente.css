@@ -93,14 +93,29 @@ button:hover {
   display: none;
 }
 
-#chk:checked ~ .login {
+#chk:checked~.login {
   transform: translateY(-500px);
 }
 
-#chk:checked ~ .login label {
+#chk:checked~.login label {
   transform: scale(1);
 }
 
-#chk:checked ~ .signup label {
+#chk:checked~.signup label {
   transform: scale(0.6);
+}
+
+.dflex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inputForm{
+  margin: 6px;
+  border-radius: 2px;
+}
+
+.btnForm{
+  width: auto;
 }

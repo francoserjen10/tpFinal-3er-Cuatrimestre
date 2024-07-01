@@ -3,24 +3,24 @@ import './formSaliente.css';
 
 const FormularioBueno = () => {
   return (
-    <div className='main'>
-      <input type="checkbox" id="chk" />
+    <div id="formSaliente" className='main hidden'>
+      <input type="checkbox" id="chk" style={{display:"none"}} />
 
       <div className="signup">
-        <form>
+        <form className="dflex">
           <label htmlFor="chk">Sign up</label>
-          <input type="text" name="txt" placeholder="User name" required />
-          <input type="email" name="email" placeholder="Email" required />
-          <input type="password" name="pswd" placeholder="Password" required />
+          <input className='inputForm' type="text" name="txt" placeholder="User name" required />
+          <input className='inputForm' type="email" name="email" placeholder="Email" required />
+          <input className='inputForm' type="password" name="pswd" placeholder="Password" required />
           <button>Sign up</button>
         </form>
       </div>
 
       <div className="login">
-        <form>
+        <form className='dflex'>
           <label htmlFor="chk">Login</label>
-          <input type="email" name="email" placeholder="Email" required />
-          <input type="password" name="pswd" placeholder="Password" required />
+          <input className='inputForm' type="email" name="email" placeholder="Email" required />
+          <input className='inputForm' type="password" name="pswd" placeholder="Password" required />
           <button>Login</button>
         </form>
       </div>
