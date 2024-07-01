@@ -5,7 +5,7 @@ import { Logo } from "@/app/components/logo/logo";
 import { NavHomeAdmin } from "@/app/components/navHome/navHomeAdmin";
 import Carousel from "@/app/components/carruselOfertas/carruselOfertas";
 
-const Page = () => {
+const PageAdmin = () => {
   return (
     <>
       <Logo />
@@ -22,7 +22,7 @@ const Page = () => {
 };
 
 //Se agrega de esta manera para que este componente pueda llegar como parametro a la funcion de whithRoles
-export default withRoles(Page, [1], "/home");
+export default withRoles(PageAdmin, [1], "/home");
 
 //TODO #
 //Cambiar el boton de iniciar secion por cerras cesion
