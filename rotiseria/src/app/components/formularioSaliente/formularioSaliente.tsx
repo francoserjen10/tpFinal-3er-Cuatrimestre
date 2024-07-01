@@ -111,9 +111,9 @@ function FormSaliente() {
 
   return (
     <>
-      <Button variant="primary" onClick={() => handleLoginAndToggle()}>
-        Iniciar Sesion
-      </Button>
+      <button className="imagenBoton" onClick={() => handleLoginAndToggle()}>
+      <img src="./imagenes/imagenBoton/imagenLogin.png" alt="Imagen" />
+      </button>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>

@@ -1,0 +1,119 @@
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    background: linear-gradient(to bottom, #6d2020, #632b2b, #3e2424);
+    padding-top: 80px;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    margin: 30px 0px;
+}
+
+img {
+    width: 320px;
+    height: 340px;
+    object-fit: cover;
+    border-radius: 20px 20px 0px 0px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15%;
+    height: 70px;
+    width: 100%;
+}
+
+.presentacion {
+    color: white;
+
+}
+
+.contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 50px auto 45px auto;
+    width: 90%;
+    flex-wrap: wrap;
+    gap: 40px;
+    color: white;
+}
+
+.contenedor > div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #791c1c;
+    height: 400px;
+    width: 300px;
+    border-radius: 20px;
+    flex-direction: column;
+    padding-top: 35px;
+    gap: 25px;
+    flex: 1 1 300px;
+}
+
+.contenedor > div > form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.contenedor > div > form > input,
+select {
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    color: black;
+}
+
+option {
+    color: black;
+}
+
+.button {
+    margin-top: 20px;
+    height: 30px;
+    border-radius: 7px;
+    border: none;
+    color: black;
+}
+
+.contenedorProductos h2 {
+    text-align: center;
+    padding-bottom: 20px;
+    font-weight: 300;
+    font-size: 40px;
+}
+
+.mostrarProductos {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-bottom: 100px;
+    flex-wrap: wrap;
+}
+
+.mostrarProductos > div {
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    background-color: #492222;
+    border-radius: 20px;
+}
+
+.contenedorProductos > h2 {
+    color: white;
+}
+
+.botonesCards {
+    height: 30px;
+    width: 200px;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+
+}

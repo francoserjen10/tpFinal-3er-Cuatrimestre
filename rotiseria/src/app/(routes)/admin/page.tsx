@@ -1,22 +1,11 @@
 "use client";
 import { withRoles } from "@/app/HOC/withRoles";
-import { Contacto } from "@/app/components/contacto/contacto";
-import { Logo } from "@/app/components/logo/logo";
-import { NavHomeAdmin } from "@/app/components/navHome/navHomeAdmin";
-import Carousel from "@/app/components/carruselOfertas/carruselOfertas";
+import CardsAdministrador from "@/app/components/cardsAdministrador/cardsAdministrador";
 
 const Page = () => {
   return (
     <>
-      <Logo />
-      {/* Home nuevo del ADMIN */}
-      <NavHomeAdmin />
-      <div style={{ marginTop: "20px" }}>
-        <Carousel />
-      </div>
-      <div style={{ marginTop: "20px" }}>
-        <Contacto />
-      </div>
+      <CardsAdministrador/>
     </>
   );
 };
