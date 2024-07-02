@@ -2,6 +2,8 @@ import React from 'react';
 import './cardsAdministrador.css';
 import { MenusAdmin } from './cardMenus';
 import { CrearCards } from './crearCards';
+import { ActualizarProductos } from './updateProduct';
+import { EliminarProducto } from './deleteProduct';
 
 export const CardsAdministrador = () => {
   return (
@@ -16,37 +18,11 @@ export const CardsAdministrador = () => {
           <CrearCards />
 
           {/* Editar */}
-          <div>
-            <h2>Editar</h2>
-            <form>
-              <label>Nombre del producto</label>
-              <select id="productoEditar">
-                <option value="">---</option>
-              </select>
-
-              <label>Atributo</label>
-              <select id="atributoEditar">
-                <option value="">---</option>
-              </select>
-
-              <label>Nuevo valor</label>
-              <input type="text" id="nuevoAtributo" />
-
-              <button className='botonesCards'>Editar</button>
-            </form>
-          </div>
-
+          <ActualizarProductos/>
+          
           {/* Eliminar */}
-          <div>
-            <h2>Eliminar</h2>
-            <form>
-              <label>Nombre del producto</label>
-              <select id="productoEliminar">
-                <option value="">---</option>
-              </select>
-              <button className='botonesCards'>Eliminar</button>
-            </form>
-          </div>
+          <EliminarProducto/>
+
         </div>
 
         {/* Mostrar el mensaje */}

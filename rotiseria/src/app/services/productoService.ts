@@ -21,3 +21,13 @@ export async function createProduct(formData: FormData): Promise<IProducto | str
         return "Ocurrio un error al crear el producto";
     }
 };
+
+export async function deleteProductById(id:number): Promise<any> {
+    try {
+        const response = await clienteAxios.delete(`/product/${id}`);
+        return response || [];
+    } catch (Error) {
+        console.error(Error)
+        return "Ocurrio un error al eliminar el producto";
+    } 
+};

@@ -2,7 +2,7 @@
 'use client'
 import { NavHomeAdmin } from "@/app/components/navHome/navHomeAdmin";
 import { Logo } from "@/app/components/logo/logo";
-import { MenusAdmin } from "@/app/components/cardMenusAdmin/cardMenus";
+import { MenusAdmin } from "@/app/components/cardsAdministrador/cardMenus";
 import "./page.css";
 import { IntroduccionMenus } from "@/app/components/introduccionMenus/introduccionMenus";
 import { withRoles } from "@/app/HOC/withRoles";
