@@ -19,7 +19,7 @@ export const NavHomeAdmin = () => {
           </Link>
         </li>
         <li>
-          <Link className="links" href="/menus">
+          <Link className="links" href="/admin/menus">
             MENUS
           </Link>
         </li>

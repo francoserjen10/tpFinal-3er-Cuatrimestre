@@ -1,5 +1,7 @@
 import React from 'react';
 import './cardsAdministrador.css';
+import { MenusAdmin } from './cardMenus';
+import { CrearCards } from './crearCards';
 
 export const CardsAdministrador = () => {
   return (
@@ -11,25 +13,7 @@ export const CardsAdministrador = () => {
       <main>
         <div className="contenedor">
           {/* Añadir */}
-          <div>
-            <h2>Añadir</h2>
-            <form>
-              <label>Nombre del producto</label>
-              <input type="text" id="productoAñadir" name="nombreDelProducto" />
-
-              <label>Valor del producto</label>
-              <input type="number" id="valorAñadir" />
-
-              <label>Existencia</label>
-              <input type="number" id="existenciaAñadir" />
-
-              <label>Url Imagen</label>
-              <input type="text" id="ImagenAñadir" />
-            
-                <button className='botonesCards'>Añadir</button>
-              
-            </form>
-          </div>
+          <CrearCards />
 
           {/* Editar */}
           <div>
@@ -73,7 +57,10 @@ export const CardsAdministrador = () => {
         {/* Productos */}
         <div className="contenedorProductos">
           <h2>Productos</h2>
-          <div className="mostrarProductos" id="mostrarProductos">Aca muestro los productos</div>
+          <div className="mostrarProductos" id="mostrarProductos">Aca muestro los productos
+
+          <MenusAdmin />
+          </div>
         </div>
       </main>
     </div>
