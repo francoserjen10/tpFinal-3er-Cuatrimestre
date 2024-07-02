@@ -1,11 +1,15 @@
 "use client";
 import { withRoles } from "@/app/HOC/withRoles";
 import CardsAdministrador from "@/app/components/cardsAdministrador/cardsAdministrador";
+import { Logo } from "@/app/components/logo/logo";
+import { NavHomeAdmin } from "@/app/components/navHome/navHomeAdmin";
 
 const PageAdmin = () => {
   return (
     <>
-      <CardsAdministrador/>
+      <Logo />
+      <NavHomeAdmin />
+      <CardsAdministrador />
     </>
   );
 };
