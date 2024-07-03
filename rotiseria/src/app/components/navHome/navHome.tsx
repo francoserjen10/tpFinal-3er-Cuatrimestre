@@ -47,7 +47,7 @@ export const NavHome = () => {
       <div className="botonSesion">
         <button className="btnForm" onClick={toggleFormulario}>Iniciar Sesión</button>
       </div>
-      {mostrarFormulario && (
+      {mostrarFormulario && (  
         <div className={mostrarFormulario ? 'mainForm' : 'mainForm hidden'}>
           <FormularioBueno />
         </div>

@@ -1,12 +1,7 @@
-/*body {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+/*@import url('https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap');
+
+.fontsForm {
   font-family: 'Jost', sans-serif;
-  background: linear-gradient(to bottom, #290c0c, #632b2b, #3e2424);
 }*/
 
 .main {
@@ -16,21 +11,23 @@
   background: url("https://img.freepik.com/free-vector/red-abstract-background-with-triangles_23-2147782738.jpg?t=st=1719179942~exp=1719183542~hmac=859808923d43a4e3b2f5b0e491e53d98b1a262b0aa2eade9641323292f643c89&w=740") no-repeat center/cover;
   border-radius: 10px;
   box-shadow: 5px 20px 50px #000000;
-  /*display: none; /* Inicialmente oculto */
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: 1000; /* Ajusta este valor según sea necesario */
 }
 
-.signup,
-.login {
+.signup {
   position: relative;
   width: 100%;
   height: 100%;
 }
-
-.signup > label {
+#chk{
+  display: none;
+    }
+.signup > form > label,
+.login > form>  label {
   color: #fff;
   font-size: 2.3em;
   justify-content: center;
@@ -41,20 +38,10 @@
   transition: 0.5s ease-in-out;
 }
 
-.login > label {
-  color: #fff;
-  font-size: 2.3em;
-  justify-content: center;
-  display: flex;
-  margin: 60px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.5s ease-in-out;
-}
-
-.login > input {
+.signup > form > input,
+.login > form > input {
   width: 60%;
-  height: 20px;
+  height: 40px;
   background: #e0dede;
   justify-content: center;
   display: flex;
@@ -64,22 +51,9 @@
   outline: none;
   border-radius: 5px;
 }
-
-.signup > input {
-  width: 60%;
-  height: 20px;
-  background: #e0dede;
-  justify-content: center;
-  display: flex;
-  margin: 20px auto;
-  padding: 10px;
-  border: none;
-  outline: none;
-  border-radius: 5px;
-} 
-
-.signup > button {
-  width: 60%;
+.login > form > button,
+.signup > form > button {
+  width: 52%;
   height: 40px;
   margin: 10px auto;
   justify-content: center;
@@ -96,29 +70,8 @@
   cursor: pointer;
 }
 
-.login > button {
-  width: 60%;
-  height: 40px;
-  margin: 10px auto;
-  justify-content: center;
-  display: block;
-  color: #fff;
-  background: #8a3b3b;
-  font-size: 1em;
-  font-weight: bold;
-  margin-top: 20px;
-  outline: none;
-  border: none;
-  border-radius: 5px;
-  transition: 0.2s ease-in;
-  cursor: pointer;
-}
-
-.signup > button:hover {
-  background: #b84444;
-}
-
-.login > button:hover {
+.login > form > button:hover,
+.signup > form > button:hover {
   background: #b84444;
 }
 
@@ -130,7 +83,7 @@
   transition: 0.8s ease-in-out;
 }
 
-.login > label {
+.login > form > label {
   color: #8a3b3b;
   transform: scale(0.6);
 }
@@ -143,25 +96,11 @@
   transform: translateY(-500px);
 }
 
-#chk:checked~.login label {
+#chk:checked~.login > form label {
   transform: scale(1);
 }
 
-#chk:checked~.signup label {
+#chk:checked~.signup > form label {
   transform: scale(0.6);
 }
 
-.dflex {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.inputForm{
-  margin: 6px;
-  border-radius: 2px;
-}
-
-.btnForm{
-  width: auto;
-}
