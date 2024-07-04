@@ -1,11 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './formSaliente.css';
 
 const FormularioBueno = () => {
+  const [mostrarFormulario, setMostrarFormulario] = useState(false);
+  
+  const CerrarForm = () => {
+    console.log("Botón de sesión presionado");
+    if(mostrarFormulario == false){
+      setMostrarFormulario(!mostrarFormulario);
+    }
+    console.log("Estado de mostrarFormulario:", !mostrarFormulario);
+    document.getElementById("formSaliente")?.classList.toggle("hidden");
+  }; 
   return (
-    <div id="formSaliente" className='main hidden fontsForm'>
+    <div id="formSaliente" className='main hidden '>
       <input type="checkbox" id="chk" />
-
+      <button className="close-btn" onClick={CerrarForm}>&times;</button>
       <div className="signup">
         <form className="dflex">
           <label htmlFor="chk">Sign up</label>

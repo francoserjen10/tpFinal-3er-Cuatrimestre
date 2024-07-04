@@ -8,13 +8,15 @@ export const NavHome = () => {
 
   const toggleFormulario = () => {
     console.log("Botón de sesión presionado");
-    if(mostrarFormulario == true){
+    if(mostrarFormulario == true){ 
       setMostrarFormulario(!mostrarFormulario);
     }
     console.log("Estado de mostrarFormulario:", !mostrarFormulario);
     document.getElementById("formSaliente")?.classList.toggle("hidden");
+    document.getElementById("formSaliente")?.classList.toggle("borroso");
   };
-
+  
+  
   return (
     <nav className="menu">
       <ul className="items">

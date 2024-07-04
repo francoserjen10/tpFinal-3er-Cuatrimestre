@@ -15,7 +15,7 @@ export default function Home() {
     <>
     
     <div className="divBody">
-    <FormularioBueno/>
+      <FormularioBueno/>
       <Logo />
       <NavHome /*userName={userName} setUserName={setUserName}*//>
       <Carousel />
