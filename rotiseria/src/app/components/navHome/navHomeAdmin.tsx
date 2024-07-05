@@ -4,35 +4,35 @@ import "./navHomeAdmin.css";
 import "./navHome.css";
 import React from "react";
 
-export const NavHomeAdmin = () => {
+export const NavHomeAdmin: React.FC = () => {
   return (
     <nav className="menu">
       <ul className="items">
         <li>
-          <Link className="links" href="/home">
+          <Link className="links" href="/admin">
             INICIO
           </Link>
         </li>
-        <li>
-          <Link className="links" href="/quienesSomos">
+        {/* <li>
+          <Link className="links" href="/admin/quienesSomos">
             QUIENES SOMOS
           </Link>
-        </li>
+        </li> */}
         <li>
-          <Link className="links" href="/menus">
+          <Link className="links" href="/admin/menus">
             MENUS
           </Link>
         </li>
-        <li>
-          <Link className="links" href="/home">
+        {/* <li>
+          <Link className="links" href="/admin/home">
             ¿PREGUNTAS?
           </Link>
-        </li>
-        <li>
-          <Link className="links" href="/home#linkcontacto">
+        </li> */}
+        {/* <li>
+          <Link className="links" href="/admin/home#linkcontacto">
             CONTACTENOS
           </Link>
-        </li>
+        </li> */}
       </ul>
       {/* Aca debo cerrar sesion */}
       <div className="cerrarSesion">
