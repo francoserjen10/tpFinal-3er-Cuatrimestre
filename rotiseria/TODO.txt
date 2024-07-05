@@ -1,0 +1,26 @@
+TODO#:
+*Ver donde guardas las imagenes de las comidas y los rubros => (vscode/imgbb). (LISTO)
+*Mostrar las imagenes de los productos (LISTO)
+*Buscar todas las imagenes de las comidas que tenemos 
+*Cambiar de iniciar sesion a cerrar sesion
+
+*ADMINISTRADOR: 
+    *Nav:
+        -menus => crud de productos
+                                    - Mostrar (LISTO)
+                                    - Actualizarlos
+                                    - Eliminarlos
+                                    - Crear
+
+        -??    => Visualizacion de compras que realizaron los usuarios (con un filtro por fecha)
+
+
+
+*USUARIO:
+    *Crud de pedidos
+
+
+
+----------------- Preguntas a Nico -----------------
+1) Nav general (Con boton de iniciar sesion) y si inicia el admin que se cambia a cerrar sesion y que los ruteos sean solamente a los lugares que tiene acceso ek admin y lo mismo con lo de usuarios
+2) De que manera estructurar los archivos y carpetas: componentes => sin registro/admin/user

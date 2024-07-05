@@ -44,26 +44,62 @@
     right: 20px; /* Ajusta según sea necesario */
 }
 
-.botonSesion button {
-    background-color: #c22b2b; /* Color de fondo del botón */
-    color: white; /* Color del texto */
-    border: none; /* Eliminar borde predefinido */
-    padding: 10px 20px; /* Espaciado interno del botón */
-    font-size: 16px; /* Tamaño de la fuente del texto del botón */
-    border-radius: 5px; /* Esquinas redondeadas */
-    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+.imagenBoton {
+    background-color: #c22b2b;
+    border: none;
+    padding: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.botonSesion button:hover {
-    background-color: rgb(139, 30, 30); /* Color de fondo más oscuro al pasar el cursor */
+.imagenBoton:hover {
+    background-color: rgb(139, 30, 30);
     transition: background-color 0.7s ease 0.05s;
 }
 
-.botonSesion button:focus {
-    outline: none; /* Elimina el borde de enfoque predefinido */
-    box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.5); /* Añade un sombreado de enfoque */
+.imagenBoton:focus {
+    outline: none;
 }
 
-.menu .items li:hover ~  .delayed-button {
-    opacity: 1;
+.imagenBoton > img {
+    height: 70%; /* Ajusta el tamaño de la imagen según sea necesario */
+    width: 70%; /* Ajusta el tamaño de la imagen según sea necesario */
+    border-radius: 50%; /* Hace que la imagen sea redonda */
+}
+
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+        position: static; /* Resetear la posición del menú en vista móvil */
+    }
+
+    .menu .items {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .menu .items li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .botonSesion {
+        width: 100%;
+        justify-content: center;
+        position: static; /* Resetear la posición del botón en vista móvil */
+        margin-top: 10px; /* Agregar margen superior para espaciar del menú */
+    }
+
+    .botonSesion button {
+        width: 100%;
+        margin-left: 0;
+    }
 }

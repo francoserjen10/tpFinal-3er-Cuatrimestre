@@ -1,0 +1,47 @@
+.card {
+    background-color: #fff;
+    border-radius: 10px 10px 0px 0px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: 300px;
+    margin: 20px;
+    text-align: center;
+}
+
+.card-img {
+    width: 100%;
+    height: auto;
+}
+
+.cardContent {
+    padding: 15px;
+}
+
+.cardTitulo {
+    font-size: 1.5em;
+    margin: 0 0 10px;
+}
+
+.cardTexto {
+    font-size: 1em;
+    color: #333;
+}
+
+.cardBoton button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 15px;
+    text-decoration: none;
+    color: #fff;
+    background-color:#c22b2b;
+    border-radius: 5px;
+    border-style: none;
+    font-size: 17px;
+}
+
+.cardBoton button:hover {
+    background-color: rgb(139, 30, 30); /* Color de fondo más oscuro al pasar el cursor */
+    transition: background-color 0.7s ease 0.05s;
+}
+
+

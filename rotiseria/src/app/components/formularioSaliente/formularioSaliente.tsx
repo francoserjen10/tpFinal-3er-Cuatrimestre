@@ -65,7 +65,7 @@ function FormSaliente({ setUserName }: FormSalienteProps) {
     const loginExitoso = await login(body);
     if (loginExitoso) {
       const userData = await getInformacionUsuario();
-      setUserName(userData?.nombre);  // Asumiendo que la respuesta contiene el nombre del usuario
+      setUserName(userData?.name);  // Asumiendo que la respuesta contiene el nombre del usuario
       if (userData?.rolId === 1) {
         router.push("/admin");
       } else {
@@ -112,9 +112,9 @@ function FormSaliente({ setUserName }: FormSalienteProps) {
 
   return (
     <>
-      <Button variant="primary" onClick={() => handleLoginAndToggle()}>
-        INICIAR FORMULARIO
-      </Button>
+      <button className="imagenBoton" onClick={() => handleLoginAndToggle()}>
+      <img src="./imagenes/imagenBoton/imagenLogin.png" alt="Imagen" />
+      </button>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>

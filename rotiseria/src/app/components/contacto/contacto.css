@@ -34,7 +34,7 @@
     width: 100%;
 }
 
-h4 {
+.contactenos > h4 {
     margin-bottom: 30px;
 }
 
@@ -55,10 +55,14 @@ h4 {
 }
 
 .footer {
-    background-color: #c22b2b;
+    background-color: #802222;
     text-align: center;
-    height: 50px;
-    padding-top: 20px;
+    height: 40px;
+    display: flex;
+    justify-content: center; /* Centrado horizontal */
+    align-items: center;     /* Centrado vertical */
+    color: white;       /* Empuja el footer hacia abajo del contenedor */
+    width: 100%;             /* Asegura que el footer ocupe todo el ancho */
 }
 
 /* Media queries para pantallas pequeñas */

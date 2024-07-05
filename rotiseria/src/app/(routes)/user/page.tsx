@@ -1,11 +1,17 @@
 "use client";
 import { withRoles } from "@/app/HOC/withRoles";
+import Link from "next/link";
 
 const Page = () => {
   return (
     // Es pagina de prueba para el ruteo
     <div>
       <h1>Usuario</h1>
+
+
+        <Link className="links" href="/user/menus">
+          MENUS
+        </Link>
     </div>
   );
 };
