@@ -6,8 +6,13 @@ import Carousel from "@/app/components/carruselOfertas/carruselOfertas";
 import { Contacto } from "@/app/components/contacto/contacto";
 import InfiniteCardSlider from "@/app/components/cardsChefs/cardsChefs";
 export default function Home() {
+ // const [userName, setUserName] = useState<string | null>(null);
+
   return (
     <>
+    
+    <div className="divBody">
+      <FormularioBueno/>
       <Logo />
       <NavHome />
       <Carousel />

@@ -1,3 +1,4 @@
+'use client'
 import "bootstrap/dist/css/bootstrap.min.css";
 import { NavHome } from "@/app/components/navHome/navHome";
 import { Logo } from "@/app/components/logo/logo";

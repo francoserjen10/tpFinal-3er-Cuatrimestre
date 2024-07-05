@@ -1,9 +1,5 @@
 import { IUsuario } from "@/app/model/user.model";
-import {
-  getInformacionUsuario,
-  login,
-  registerUser,
-} from "@/app/services/auth";
+import { getInformacionUsuario, login, registerUser } from "@/app/services/auth";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
@@ -11,12 +7,16 @@ import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import Swal from "sweetalert2";
 
-function FormSaliente() {
+interface FormSalienteProps {
+  setUserName: (name: string) => void;
+}
+
+function FormSaliente({ setUserName }: FormSalienteProps) {
   const mostrarAlert = () => {
     Swal.fire({
       icon: "success",
       title: "Registrado",
-      html: "<p>Usuario <b>Nombre del usuario creado</b> creado con exito!</p>",
+      html: "<p>Usuario <b>Nombre del usuario creado</b> creado con éxito!</p>",
     });
   };
 
@@ -65,17 +65,18 @@ function FormSaliente() {
     const loginExitoso = await login(body);
     if (loginExitoso) {
       const userData = await getInformacionUsuario();
+      setUserName(userData?.name);  // Asumiendo que la respuesta contiene el nombre del usuario
       if (userData?.rolId === 1) {
         router.push("/admin");
       } else {
         router.push("/user");
       }
+      handleClose();  // Cerrar el modal después del login exitoso
     } else {
       alert("Login fallido. Por favor, verifica tus credenciales.");
     }
   };
 
-  // ----------------- BOTON DE REGISTRO -----------------
   const handleRegister = async () => {
     const user: IUsuario = {
       name: usuarioRegister.name,
@@ -96,12 +97,12 @@ function FormSaliente() {
       });
       toggleForms("login");
     } else {
-      alert("Error, no se creo el usuario");
+      alert("Error, no se creó el usuario");
     }
   };
 
   const toggleForms = (val: string) => {
-    setRegister(val == "register");
+    setRegister(val === "register");
   };
 
   const handleLoginAndToggle = () => {
@@ -117,7 +118,7 @@ function FormSaliente() {
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          {!register && <Modal.Title>Iniciar Sesion</Modal.Title>}
+          {!register && <Modal.Title>Iniciar Sesión</Modal.Title>}
           {register && <Modal.Title>Registrarse</Modal.Title>}
         </Modal.Header>
         <Modal.Body>
@@ -137,7 +138,7 @@ function FormSaliente() {
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="password">
-                <Form.Label>Contaseña</Form.Label>
+                <Form.Label>Contraseña</Form.Label>
                 <Form.Control
                   type="password"
                   placeholder="contraseña"
@@ -180,10 +181,10 @@ function FormSaliente() {
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="dni">
-                <Form.Label>Dni</Form.Label>
+                <Form.Label>DNI</Form.Label>
                 <Form.Control
                   type="number"
-                  placeholder="Dni"
+                  placeholder="DNI"
                   autoFocus
                   name="dni"
                   required
@@ -206,7 +207,7 @@ function FormSaliente() {
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="password">
-                <Form.Label>Contaseña</Form.Label>
+                <Form.Label>Contraseña</Form.Label>
                 <Form.Control
                   type="password"
                   placeholder="contraseña"

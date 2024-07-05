@@ -1,12 +1,14 @@
+.blur-background {
+  backdrop-filter: blur(10px);
+}
 .menu {
     background-color: #ac2424;
     height: 55px;
     width: 100%;
     display: flex;
-    justify-content: center; /* Centrar los elementos del menú */
+    justify-content: center;
     align-items: center;
-    padding: 0 20px;
-    position: relative; /* Para permitir posicionar el botón de sesión de manera absoluta */
+    position: relative;
 }
 
 .menu .items {
@@ -15,16 +17,11 @@
     align-items: center;
     margin: 0;
     padding: 0;
-    justify-content: center; /* Centrar los elementos del menú */
 }
 
 .menu .items li {
     margin-right: 15px;
-    transition: all 0.3s ease;
-}
-
-.menu .items li:last-child {
-    margin-right: 0; /* Remover el margen derecho del último elemento */
+    transition: all 0.3s ease; /* Transición para suavizar el efecto */
 }
 
 .menu .items .links {
@@ -34,19 +31,17 @@
     color: white;
     text-align: center;
     display: block;
-    transition: font-size 0.3s ease, color 0.3s ease;
+    transition: font-size 0.3s ease, color 0.3s ease; /* Transición para suavizar el cambio de tamaño y color */
 }
 
 .menu .items li:hover .links {
-    font-size: 20px;
-    color: yellow;
+    font-size: 20px; /* Tamaño de la letra agrandado */
+    color: yellow; /* Nuevo color del texto */
 }
 
 .botonSesion {
-    display: flex;
-    align-items: center;
-    position: absolute; /* Posicionar el botón de sesión de manera absoluta */
-    right: 20px; /* Ajustar la posición del botón de sesión */
+    position: absolute;
+    right: 20px; /* Ajusta según sea necesario */
 }
 
 .imagenBoton {

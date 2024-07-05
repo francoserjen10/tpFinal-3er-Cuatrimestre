@@ -1,14 +1,9 @@
 'use client'
 import Link from 'next/link';
 import './navNormal.css';
-import React, { useState } from 'react';
+import React from 'react';
 
 export const NavNormal = () => {
-    const [showForm, setShowForm] = useState<boolean>(false);
-
-    const handleButtonClick = () => {
-        setShowForm(true);
-    };
 
     return (
         <nav className="menu">
