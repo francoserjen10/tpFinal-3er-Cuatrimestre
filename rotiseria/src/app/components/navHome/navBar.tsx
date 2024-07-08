@@ -17,7 +17,6 @@ export const NavBar = () => {
     }
     console.log("Estado de mostrarFormulario:", !mostrarFormulario);
     document.getElementById("formSaliente")?.classList.toggle("hidden");
-    document.getElementById("formSaliente")?.classList.toggle("borroso");
   };
 
   const logOut = () => {

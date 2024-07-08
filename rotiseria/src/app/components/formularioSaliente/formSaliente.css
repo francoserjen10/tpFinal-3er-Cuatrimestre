@@ -1,22 +1,22 @@
-
 .botonCerrar {
   position: fixed;/* hace que no mueva otros componentes*/
-  background-color: transparent;
-  border: none;
-  color: white; 
-  font-size: 24px; 
-  cursor: pointer;
-  padding: 0; 
-  width: 32px; 
-  height: 32px; 
-  line-height: 1; /* Asegura que el icono esté centrado verticalmente */
-  top: 10px; 
-  right: 10px; 
+    background-color: transparent;
+    border: none;
+    color: white; 
+    font-size: 24px; 
+    cursor: pointer;
+    padding: 0; 
+    width: 32px; 
+    height: 32px; 
+    line-height: 1; /* Asegura que el icono esté centrado verticalmente */
+    top: 10px; 
+    right: 10px; 
 }
 
-.close-btn:hover {
+.botonCerrar:hover {
   color: red; 
 }
+
 .main {
   width: 350px;
   height: 500px;
@@ -27,7 +27,6 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  backdrop-filter: blur(10px); /* Aplicar desenfoque */
   transform: translate(-50%, -50%);
   z-index: 1000; /* Ajusta este valor según sea necesario */
 }

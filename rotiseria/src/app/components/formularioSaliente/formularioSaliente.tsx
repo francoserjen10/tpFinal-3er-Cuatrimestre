@@ -10,7 +10,7 @@ const FormularioBueno = () => {
   const [mostrarFormulario, setMostrarFormulario] = useState(false);
 
   const CerrarForm = () => {
-    console.log("Botón de sesión presionado");
+    console.log("Botón de cerrado presionado");
     if (mostrarFormulario == false) {
       setMostrarFormulario(!mostrarFormulario);
     }
