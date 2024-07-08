@@ -1,12 +1,5 @@
-.borroso {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  filter: blur(8px); /* Ajusta el valor de desenfoque según sea necesario */
-  z-index: 990; /* Asegura que esté por encima de otros elementos */
-}
 
-.close-btn {
+.botonCerrar {
   position: fixed;/* hace que no mueva otros componentes*/
   background-color: transparent;
   border: none;
@@ -47,13 +40,23 @@
 #chk{
   display: none;
     }
-.signup > form > label,
+.signup > form > label {
+  color: #fff;
+  font-size: 2.3em;
+  justify-content: center;
+  display: flex;
+  margin: 30px 0 auto;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+}
+
 .login > form>  label {
   color: #fff;
   font-size: 2.3em;
   justify-content: center;
   display: flex;
-  margin: 60px;
+  margin: 100px;
   font-weight: bold;
   cursor: pointer;
   transition: 0.5s ease-in-out;
@@ -62,16 +65,22 @@
 .signup > form > input,
 .login > form > input {
   width: 60%;
-  height: 40px;
+  height: 35px;
   background: #e0dede;
   justify-content: center;
   display: flex;
-  margin: 20px auto;
-  padding: 10px;
+  padding: 0 auto;
   border: none;
   outline: none;
   border-radius: 5px;
+  margin: 5px auto;
+
 }
+
+.signup > form > input:first-of-type {
+  margin-top: 30px;
+}
+
 .login > form > button,
 .signup > form > button {
   width: 52%;
@@ -125,3 +134,9 @@
   transform: scale(0.6);
 }
 
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5px; /* Ajusta este valor para mover el formulario hacia arriba o abajo */
+}
