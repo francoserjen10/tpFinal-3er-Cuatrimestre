@@ -1,30 +1,22 @@
-import { IUsuario } from "@/app/model/user.model";
-import { getInformacionUsuario, login, registerUser } from "@/app/services/auth";
+import React, { useState } from "react";
+import "./formSaliente.css";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
-import Modal from "react-bootstrap/Modal";
-import Swal from "sweetalert2";
+import { IUsuario } from "@/app/model/user.model";
+import { login, registerUser } from "@/app/services/auth";
 
-interface FormSalienteProps {
-  setUserName: (name: string) => void;
-}
+const FormularioBueno = () => {
+  const router = useRouter();
 
-function FormSaliente({ setUserName }: FormSalienteProps) {
-  const mostrarAlert = () => {
-    Swal.fire({
-      icon: "success",
-      title: "Registrado",
-      html: "<p>Usuario <b>Nombre del usuario creado</b> creado con éxito!</p>",
-    });
+  const [mostrarFormulario, setMostrarFormulario] = useState(false);
+
+  const CerrarForm = () => {
+    console.log("Botón de sesión presionado");
+    if (mostrarFormulario == false) {
+      setMostrarFormulario(!mostrarFormulario);
+    }
+    console.log("Estado de mostrarFormulario:", !mostrarFormulario);
+    document.getElementById("formSaliente")?.classList.toggle("hidden");
   };
-
-  const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
-  const [register, setRegister] = useState(false);
 
   const [usuario, setUsuario] = useState({
     email: "",
@@ -39,19 +31,9 @@ function FormSaliente({ setUserName }: FormSalienteProps) {
     password: "",
   });
 
-  const router = useRouter();
-
   const handleChangeLogin = (e: any) => {
     const { name, value } = e.target;
     setUsuario((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
-  };
-
-  const handleChangeRegister = (e: any) => {
-    const { name, value } = e.target;
-    setUsuarioRegister((prevState) => ({
       ...prevState,
       [name]: value,
     }));
@@ -64,17 +46,26 @@ function FormSaliente({ setUserName }: FormSalienteProps) {
     };
     const loginExitoso = await login(body);
     if (loginExitoso) {
-      const userData = await getInformacionUsuario();
-      setUserName(userData?.name);  // Asumiendo que la respuesta contiene el nombre del usuario
-      if (userData?.rolId === 1) {
+      const jwt = require("jsonwebtoken");
+      const token = localStorage.getItem("accessToken");
+      const user: IUsuario = jwt.decode(token);
+
+      if (user?.rolId === 1) {
         router.push("/admin");
       } else {
         router.push("/user");
       }
-      handleClose();  // Cerrar el modal después del login exitoso
     } else {
       alert("Login fallido. Por favor, verifica tus credenciales.");
     }
+  };
+
+  const handleChangeRegister = (e: any) => {
+    const { name, value } = e.target;
+    setUsuarioRegister((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
   };
 
   const handleRegister = async () => {
@@ -87,7 +78,7 @@ function FormSaliente({ setUserName }: FormSalienteProps) {
     };
     const registerExitoso = await registerUser(user);
     if (registerExitoso) {
-      mostrarAlert();
+      // mostrarAlert();
       setUsuarioRegister({
         name: "",
         lastName: "",
@@ -95,162 +86,97 @@ function FormSaliente({ setUserName }: FormSalienteProps) {
         email: "",
         password: "",
       });
-      toggleForms("login");
     } else {
       alert("Error, no se creó el usuario");
     }
   };
 
-  const toggleForms = (val: string) => {
-    setRegister(val === "register");
-  };
-
-  const handleLoginAndToggle = () => {
-    handleShow();
-    toggleForms("login");
-  };
-
   return (
-    <>
-      <button className="imagenBoton" onClick={() => handleLoginAndToggle()}>
-      <img src="./imagenes/imagenBoton/imagenLogin.png" alt="Imagen" />
+    <div id="formSaliente" className="main hidden ">
+      <input type="checkbox" id="chk" />
+      <button className="close-btn" onClick={CerrarForm}>
+        &times;
       </button>
+      <div className="signup">
+        <form className="dflex">
+          <label htmlFor="chk">Registrarse</label>
 
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          {!register && <Modal.Title>Iniciar Sesión</Modal.Title>}
-          {register && <Modal.Title>Registrarse</Modal.Title>}
-        </Modal.Header>
-        <Modal.Body>
-          {!register && (
-            <Form>
-              <Form.Group className="mb-3" controlId="email">
-                <Form.Label>Email</Form.Label>
-                <Form.Control
-                  type="email"
-                  placeholder="Email"
-                  autoFocus
-                  name="email"
-                  required
-                  value={usuario.email}
-                  onChange={(e) => handleChangeLogin(e)}
-                />
-              </Form.Group>
+          <input
+            type="text"
+            name="name"
+            placeholder="Nombre"
+            required
+            value={usuarioRegister.name}
+            onChange={(e) => handleChangeRegister(e)}
+          />
 
-              <Form.Group className="mb-3" controlId="password">
-                <Form.Label>Contraseña</Form.Label>
-                <Form.Control
-                  type="password"
-                  placeholder="contraseña"
-                  autoFocus
-                  name="password"
-                  required
-                  value={usuario.password}
-                  onChange={(e) => handleChangeLogin(e)}
-                />
-              </Form.Group>
-            </Form>
-          )}
+          <input
+            type="text"
+            name="lastName"
+            placeholder="Apellido"
+            required
+            value={usuarioRegister.lastName}
+            onChange={(e) => handleChangeRegister(e)}
+          />
 
-          {register && (
-            <Form>
-              <Form.Group className="mb-3" controlId="name">
-                <Form.Label>Nombre</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="Nombre"
-                  autoFocus
-                  name="name"
-                  required
-                  value={usuarioRegister.name}
-                  onChange={(e) => handleChangeRegister(e)}
-                />
-              </Form.Group>
+          <input
+            type="number"
+            name="dni"
+            placeholder="DNI"
+            required
+            value={usuarioRegister.dni}
+            onChange={(e) => handleChangeRegister(e)}
+          />
 
-              <Form.Group className="mb-3" controlId="lastName">
-                <Form.Label>Apellido</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="Apellido"
-                  autoFocus
-                  name="lastName"
-                  required
-                  value={usuarioRegister.lastName}
-                  onChange={(e) => handleChangeRegister(e)}
-                />
-              </Form.Group>
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            required
+            value={usuarioRegister.email}
+            onChange={(e) => handleChangeRegister(e)}
+          />
 
-              <Form.Group className="mb-3" controlId="dni">
-                <Form.Label>DNI</Form.Label>
-                <Form.Control
-                  type="number"
-                  placeholder="DNI"
-                  autoFocus
-                  name="dni"
-                  required
-                  value={usuarioRegister.dni}
-                  onChange={(e) => handleChangeRegister(e)}
-                />
-              </Form.Group>
+          <input
+            type="password"
+            name="password"
+            placeholder="Contraseña"
+            required
+            value={usuarioRegister.password}
+            onChange={(e) => handleChangeRegister(e)}
+          />
 
-              <Form.Group className="mb-3" controlId="email">
-                <Form.Label>Email</Form.Label>
-                <Form.Control
-                  type="email"
-                  placeholder="Email"
-                  autoFocus
-                  name="email"
-                  required
-                  value={usuarioRegister.email}
-                  onChange={(e) => handleChangeRegister(e)}
-                />
-              </Form.Group>
+          <button onClick={() => handleRegister()}>Registrarse</button>
+        </form>
+      </div>
 
-              <Form.Group className="mb-3" controlId="password">
-                <Form.Label>Contraseña</Form.Label>
-                <Form.Control
-                  type="password"
-                  placeholder="contraseña"
-                  autoFocus
-                  name="password"
-                  required
-                  value={usuarioRegister.password}
-                  onChange={(e) => handleChangeRegister(e)}
-                />
-              </Form.Group>
-            </Form>
-          )}
-        </Modal.Body>
+      <div className="login">
+        <form className="dflex">
+          <label htmlFor="chk">Iniciar Sesion</label>
 
-        {register && (
-          <Modal.Footer>
-            <Button variant="primary" onClick={() => handleRegister()}>
-              Registrarse
-            </Button>
-            <Button variant="light" onClick={() => handleClose()}>
-              Cancelar
-            </Button>
-            <Button variant="secondary" onClick={() => toggleForms("login")}>
-              Login
-            </Button>
-          </Modal.Footer>
-        )}
-        {!register && (
-          <Modal.Footer>
-            <Button variant="secondary" onClick={() => toggleForms("register")}>
-              Registrarse
-            </Button>
-            <Button variant="light" onClick={() => handleClose()}>
-              Cancelar
-            </Button>
-            <Button variant="primary" onClick={() => handleLogin()}>
-              Ingresar
-            </Button>
-          </Modal.Footer>
-        )}
-      </Modal>
-    </>
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            required
+            value={usuario.email}
+            onChange={(e) => handleChangeLogin(e)}
+          />
+
+          <input
+            type="password"
+            name="password"
+            placeholder="Contraseña"
+            required
+            value={usuario.password}
+            onChange={(e) => handleChangeLogin(e)}
+          />
+
+          <button onClick={() => handleLogin()}>Ingresar</button>
+        </form>
+      </div>
+    </div>
   );
-}
+};
 
-export default FormSaliente;
+export default FormularioBueno;

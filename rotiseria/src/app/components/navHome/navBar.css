@@ -1,6 +1,7 @@
 .blur-background {
-  backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
 }
+
 .menu {
     background-color: #ac2424;
     height: 55px;
@@ -8,6 +9,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    /* padding: 0 20px; */
     position: relative;
 }
 
@@ -17,12 +19,23 @@
     align-items: center;
     margin: 0;
     padding: 0;
+    /* justify-content: center; Centrar los elementos del menú */
 }
 
 .menu .items li {
     margin-right: 15px;
-    transition: all 0.3s ease; /* Transición para suavizar el efecto */
+    transition: all 0.3s ease;
+    /* Transición para suavizar el efecto */
 }
+
+/*.menu .items li:last-child {
+    margin-right: 0;  Remover el margen derecho del último elemento 
+  }*/
+
+/* .menu .items li:hover ~  .delayed-button {
+    opacity: 1;
+  } */
+
 
 .menu .items .links {
     padding: 7px 13px;
@@ -31,17 +44,23 @@
     color: white;
     text-align: center;
     display: block;
-    transition: font-size 0.3s ease, color 0.3s ease; /* Transición para suavizar el cambio de tamaño y color */
+    transition: font-size 0.3s ease, color 0.3s ease;
+    /* Transición para suavizar el cambio de tamaño y color */
 }
 
 .menu .items li:hover .links {
-    font-size: 20px; /* Tamaño de la letra agrandado */
-    color: yellow; /* Nuevo color del texto */
+    font-size: 20px;
+    /* Tamaño de la letra agrandado */
+    color: yellow;
+    /* Nuevo color del texto */
 }
 
 .botonSesion {
     position: absolute;
-    right: 20px; /* Ajusta según sea necesario */
+    right: 20px;
+    /* Ajusta según sea necesario */
+    /* display: flex;
+    align-items: center; */
 }
 
 .imagenBoton {
@@ -66,10 +85,13 @@
     outline: none;
 }
 
-.imagenBoton > img {
-    height: 70%; /* Ajusta el tamaño de la imagen según sea necesario */
-    width: 70%; /* Ajusta el tamaño de la imagen según sea necesario */
-    border-radius: 50%; /* Hace que la imagen sea redonda */
+.imagenBoton>img {
+    height: 70%;
+    /* Ajusta el tamaño de la imagen según sea necesario */
+    width: 70%;
+    /* Ajusta el tamaño de la imagen según sea necesario */
+    border-radius: 50%;
+    /* Hace que la imagen sea redonda */
 }
 
 @media (max-width: 768px) {
@@ -77,7 +99,8 @@
         flex-direction: column;
         height: auto;
         padding: 10px;
-        position: static; /* Resetear la posición del menú en vista móvil */
+        position: static;
+        /* Resetear la posición del menú en vista móvil */
     }
 
     .menu .items {
@@ -94,8 +117,10 @@
     .botonSesion {
         width: 100%;
         justify-content: center;
-        position: static; /* Resetear la posición del botón en vista móvil */
-        margin-top: 10px; /* Agregar margen superior para espaciar del menú */
+        position: static;
+        /* Resetear la posición del botón en vista móvil */
+        margin-top: 10px;
+        /* Agregar margen superior para espaciar del menú */
     }
 
     .botonSesion button {

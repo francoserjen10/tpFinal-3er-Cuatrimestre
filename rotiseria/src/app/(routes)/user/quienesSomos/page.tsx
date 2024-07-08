@@ -4,16 +4,20 @@ import { Logo } from "@/app/components/logo/logo";
 import { Info } from "@/app/components/infoRotiseria/infoRotiseria";
 import { ServiciosBrindados } from "@/app/components/serviciosBrindadosHome/serviciosBrindados";
 import { Contacto } from "@/app/components/contacto/contacto";
-import NavBar from "@/app/components/navHome/navBar";
+import { withRoles } from "@/app/HOC/withRoles";
+import { NavBar } from "@/app/components/navHome/navBar";
 
-export default function QuienesSomosHome() {
+const quienesSomosUser = () => {
   return (
     <>
       <Logo />
+      {/* <NavHomeUser /> */}
       <NavBar />
       <Info />
       <ServiciosBrindados />
       <Contacto />
     </>
   );
-}
+};
+
+export default withRoles(quienesSomosUser, [2], "/home");
