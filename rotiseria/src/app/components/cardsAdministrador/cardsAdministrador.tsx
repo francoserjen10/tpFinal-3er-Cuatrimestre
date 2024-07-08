@@ -1,14 +1,14 @@
-import React from 'react';
-import './cardsAdministrador.css';
-import { MenusAdmin } from './cardMenus';
-import { CrearCards } from './crearCards';
-import { ActualizarProductos } from './updateProduct';
-import { EliminarProducto } from './deleteProduct';
+import React from "react";
+import "./cardsAdministrador.css";
+import { MenusAdmin } from "./cardMenus";
+import { CrearCards } from "./crearCards";
+import { ActualizarProductos } from "./updateProduct";
+import { EliminarProducto } from "./deleteProduct";
 
-export const CardsAdministrador = () => {
+export const ModificacionesAdmin = () => {
   return (
     <div>
-      <header className='presentacion'>
+      <header className="presentacion">
         <h1>Modificacion de Cards</h1>
       </header>
 
@@ -18,11 +18,10 @@ export const CardsAdministrador = () => {
           <CrearCards />
 
           {/* Editar */}
-          <ActualizarProductos/>
-          
-          {/* Eliminar */}
-          <EliminarProducto/>
+          <ActualizarProductos />
 
+          {/* Eliminar */}
+          <EliminarProducto />
         </div>
 
         {/* Mostrar el mensaje */}
@@ -33,9 +32,9 @@ export const CardsAdministrador = () => {
         {/* Productos */}
         <div className="contenedorProductos">
           <h2>Productos</h2>
-          <div className="mostrarProductos" id="mostrarProductos">Aca muestro los productos
-
-          <MenusAdmin />
+          <div className="mostrarProductos" id="mostrarProductos">
+            Aca muestro los productos
+            <MenusAdmin />
           </div>
         </div>
       </main>
@@ -43,4 +42,4 @@ export const CardsAdministrador = () => {
   );
 };
 
-export default CardsAdministrador;
+export default ModificacionesAdmin;
