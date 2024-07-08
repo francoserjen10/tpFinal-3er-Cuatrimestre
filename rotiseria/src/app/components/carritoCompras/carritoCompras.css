@@ -1,34 +1,28 @@
-.tituloCabeza {
-    text-align: center;
-}
-
-.card {
+.contenedorCarrito {
     margin: 0 auto;
-    max-width: 950px;
-    width: 90%;
+    max-width: 700px;
+    width: 85%;
     box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    border-radius: 1rem;
+    border-radius: 10px;
     border: transparent;
     margin-top: 5%;
 }
 
-.cart {
+.carrito {
     background-color: #fff;
     padding: 4vh 5vh;
     border-bottom-left-radius: 1rem;
     border-top-left-radius: 1rem;
 }
 
-.summary {
-    background-color: #ddd;
-    border-top-right-radius: 1rem;
-    border-bottom-right-radius: 1rem;
-    padding: 4vh;
-    color: rgb(65, 65, 65);
+.presentacion {
+    text-align: center;
 }
 
-.title b {
-    font-size: 1.5rem;
+.lineaDivisoria {
+    margin-top: 1.25rem;
+    border: none;
+    border-top: 1px solid #000;
 }
 
 .main {
@@ -36,115 +30,69 @@
     padding: 2vh 0;
     width: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
 }
 
-.col-2,
-.col {
-    padding: 0 1vh;
+.hilera {
+    display: flex;
+    align-items: center;
+    height: 100px;
+    width: 100%;
 }
 
-.product-details {
+.sectorTexto {
+    text-align: left;
+    width: 100%;
+    padding-left: 1%;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.detalleProductos {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     margin: 1%;
 }
 
-.quantity {
+.row {
+    margin: 0;
+    align-self: center;
+}
+
+.cantidad {
     display: flex;
     align-items: center;
-    justify-content: center; /* Añadido para centrar horizontalmente */
+    justify-content: center;
     margin-right: 15%;
     text-align: center;
 }
 
-.price {
-    display: flex;
-    align-items: center;
-    margin-right: 20%;
-}
-
-a {
+.precio {
     padding: 0 1vh;
 }
 
-.close {
-    margin-left: auto;
-    font-size: 0.7rem;
+.cantidadItems {
+    text-align: left;
 }
 
-.imagenCarrito {
-    width: 3.5rem;
+.imagenProducto {
+    width: 80px;
+    height: 80px;
 }
 
-.back-to-shop {
-    margin-top: 4.5rem;
-}
 
-h5 {
-    margin-top: 4vh;
-}
 
-hr.divider {
-    margin-top: 1.25rem;
-    border: none;
-    border-top: 1px solid #000; /* Línea negra */
-}
+/* ----------------------------- Encargue */
 
-form {
-    padding: 2vh 0;
-}
 
-select {
-    border: 1px solid rgba(0, 0, 0, 0.137);
-    padding: 1.5vh 1vh;
-    margin-bottom: 4vh;
-    outline: none;
-    width: 100%;
-    background-color: rgb(247, 247, 247);
-}
-
-input {
-    border: 1px solid rgba(0, 0, 0, 0.137);
-    padding: 1vh;
-    margin-bottom: 4vh;
-    outline: none;
-    width: 100%;
-    background-color: rgb(247, 247, 247);
-}
-
-input:focus::-webkit-input-placeholder {
-    color: transparent;
-}
-
-.btn {
-    background-color: #000;
-    border-color: #000;
-    color: white;
-    width: 100%;
-    font-size: 0.7rem;
-    margin-top: 4vh;
-    padding: 1vh;
-    border-radius: 0;
-}
-
-.btn:focus {
-    box-shadow: none;
-    outline: none;
-    color: white;
-    transition: none;
-}
-
-.btn:hover {
-    color: white;
-}
-
-a {
-    color: black;
-}
-
-a:hover {
-    color: black;
-    text-decoration: none;
+.contenedorEncargue {
+    margin: 0 auto;
+    max-width: 700px;
+    width: 85%;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+    border: transparent;
+    margin-top: 5%;
 }

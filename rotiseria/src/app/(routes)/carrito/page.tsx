@@ -1,6 +1,5 @@
 'use client'
-import ShoppingCart from "@/app/components/carritoCompras/carritoCompras"
-import CarritoPersonalizado from "@/app/components/carritoCompras/carritoPersonalizado"
+import { CarritoTabla } from "@/app/components/CarritoTabla/carritoTabla"
 import { Logo } from "@/app/components/logo/logo"
 import { NavHome } from "@/app/components/navHome/navHome"
 export default function Home() {
@@ -8,8 +7,7 @@ export default function Home() {
         <>
         <Logo/>
         <NavHome/>
-        <CarritoPersonalizado/>
-        <ShoppingCart/>
+        <CarritoTabla/>
         </>
     
     )

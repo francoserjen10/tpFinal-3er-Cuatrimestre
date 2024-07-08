@@ -1,0 +1,97 @@
+body {
+    background-image: url('https://images.pexels.com/photos/616401/pexels-photo-616401.jpeg?cs=srgb&dl=pexels-goumbik-616401.jpg&fm=jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+}
+.principal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+.contenedor {
+    box-shadow: 0 6px 20px 0 rgba(240, 0, 0, 0.514);
+    border-radius: 10px;
+    padding: 0 auto;
+    width: 0 auto;;
+    backdrop-filter: blur(7px);
+}
+
+.encabezado {
+    background-color: #fff4;
+    padding: 10px 5px;
+    border-radius: 15px 15px 0px 0px;
+    padding: .8rem .1rem;
+    backdrop-filter: blur(5px);
+}
+
+.titulo {
+    text-align: center;
+}
+
+.cuerpo {
+    background-color: rgba(221, 186, 186, 0.733);
+    backdrop-filter: blur(10px);
+    border-radius: 0px 0px 15px 15px;
+    overflow: auto;
+    margin: .8rem auto;
+    width: 95%;
+}
+
+.cuerpo::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+.cuerpo::-webkit-scrollbar-thumb {
+    border-radius: .5rem;
+    background-color: #0004;
+    visibility: hidden;
+}
+.cuerpo:hover::-webkit-scrollbar-thumb {
+    visibility: visible;
+}
+
+.cuerpo > table {
+    border-collapse: collapse; /* Para asegurarte de que los bordes no se dupliquen */
+    border: none; /* Quitar el borde de la tabla */
+}
+
+.categorias > th {
+    padding: 20px 15px;
+    text-transform: uppercase;
+    top: 0px;
+    left: 0px;
+    background-color: #f55757bd;
+    color: white;
+}
+
+.categorias > th, td {
+    border-collapse: collapse;
+}
+
+.descripciones > tr > td {
+    padding: 15px;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.19);
+    text-align: center;
+}
+
+.descripciones > tr {
+    cursor: pointer;
+}
+
+.descripciones > tr:hover {
+    background-color: #fff6;
+}
+
+.descripciones > tr:nth-child(even) {
+    background-color: #0000000b;
+}
+
+.descripciones > tr > td > img {
+    height: 70%;
+    width: 70%;
+}
