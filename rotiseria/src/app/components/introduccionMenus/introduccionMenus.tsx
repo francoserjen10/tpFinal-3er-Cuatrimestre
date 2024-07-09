@@ -8,7 +8,7 @@ const ClikearFiltro = () => {
         <p className="posicionTexto">Ensaladas</p>
         <img
           className="regularImagen"
-          src="./imagenes/imagenesFiltro/ensalada/ensalada.png"
+          src="../imagenes/imagenesFiltro/ensalada/ensalada.png"
           alt=""
         />
       </button>
@@ -17,7 +17,7 @@ const ClikearFiltro = () => {
         <p className="posicionTexto">Pastas</p>
         <img
           className="regularImagen"
-          src="./imagenes/imagenesFiltro/pastas/imagenPastas.png"
+          src="../imagenes/imagenesFiltro/pastas/imagenPastas.png"
           alt=""
         />
       </button>
@@ -26,7 +26,7 @@ const ClikearFiltro = () => {
         <p className="posicionTexto">Carnes</p>
         <img
           className="regularImagen"
-          src="./imagenes/imagenesFiltro/carne/imagenCarne.png"
+          src="../imagenes/imagenesFiltro/carne/imagenCarne.png"
           alt=""
         />
       </button>
@@ -35,7 +35,7 @@ const ClikearFiltro = () => {
         <p className="posicionTexto">Guarniciones</p>
         <img
           className="regularImagen"
-          src="./imagenes/imagenesFiltro/guarniciones/guarnision.png"
+          src="../imagenes/imagenesFiltro/guarniciones/guarnision.png"
           alt=""
         />
       </button>
@@ -44,7 +44,7 @@ const ClikearFiltro = () => {
         <p className="posicionTexto">Bebidas</p>
         <img
           className="regularImagen"
-          src="./imagenes/imagenesFiltro/cerveza/cervezaCorona1.png"
+          src="../imagenes/imagenesFiltro/cerveza/cervezaCorona1.png"
           alt=""
         />
       </button>
@@ -53,7 +53,7 @@ const ClikearFiltro = () => {
         <p className="posicionTexto">Salsas</p>
         <img
           className="regularImagen"
-          src="./imagenes/imagenesFiltro/salsa/salsa.png"
+          src="../imagenes/imagenesFiltro/salsa/salsa.png"
           alt=""
         />
       </button>
@@ -62,7 +62,7 @@ const ClikearFiltro = () => {
         <p className="posicionTexto">Pizzas</p>
         <img
           className="regularImagen"
-          src="./imagenes/imagenesFiltro/pizza/pizza.png"
+          src="../imagenes/imagenesFiltro/pizza/pizza.png"
           alt=""
         />
       </button>
@@ -71,7 +71,7 @@ const ClikearFiltro = () => {
         <p className="posicionTexto">Empanadas</p>
         <img
           className="regularImagen"
-          src="./imagenes/imagenesFiltro/empanada/empanada.png"
+          src="../imagenes/imagenesFiltro/empanada/empanada.png"
           alt=""
         />
       </button>
