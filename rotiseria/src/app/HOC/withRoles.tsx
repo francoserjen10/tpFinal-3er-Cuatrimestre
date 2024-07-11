@@ -1,12 +1,19 @@
 import { useRouter } from "next/navigation";
 
 function hasRequiredPermissions(roles: number[]): boolean {
-  const jwt = require("jsonwebtoken");
-  const token = localStorage.getItem("accessToken");
-  const respuesta = jwt.decode(token).rolId;
-  const rol: number = respuesta;
-  const resultadoRoles = roles.some((r) => r === rol);
-  return resultadoRoles;
+  if (typeof window !== "undefined") {
+    const jwt = require("jsonwebtoken");
+    const token = localStorage.getItem("accessToken");
+    if (token) {
+      const respuesta = jwt.decode(token).rolId;
+      if (respuesta) {
+        const rol: number = respuesta;
+        const resultadoRoles = roles.some((r) => r === rol);
+        return resultadoRoles;
+      }
+    }
+  }
+  return false;
 }
 
 /**

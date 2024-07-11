@@ -55,7 +55,7 @@ export const Contacto = () => {
         <div className='d-flex flex-column justify-content-center align-items-center redes'>
           <figure>
             <a href="#">
-              <img src="../imagenes/imagenLogo/LogoRotiseria.png" alt="Logo de SLee Dw" />
+              <img src="../imagenes/imagenLogo/LogoRotiseria.png" alt="Logo Programing" />
             </a>
           </figure>
         </div>
@@ -113,4 +113,4 @@ export const Contacto = () => {
       </div>
     </section>
   );
-}
+} 
