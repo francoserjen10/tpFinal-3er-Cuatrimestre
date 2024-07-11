@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import "./formSaliente.css";
 import { useRouter } from "next/navigation";
@@ -40,23 +41,27 @@ const FormularioBueno = () => {
   };
 
   const handleLogin = async () => {
-    const body = {
-      email: usuario.email,
-      password: usuario.password,
-    };
-    const loginExitoso = await login(body);
-    if (loginExitoso) {
-      const jwt = require("jsonwebtoken");
-      const token = localStorage.getItem("accessToken");
-      const user: IUsuario = jwt.decode(token);
+    try {
+      const body = {
+        email: usuario.email,
+        password: usuario.password,
+      };
+      const loginExitoso = await login(body);
+      if (loginExitoso) {
+        const jwt = require("jsonwebtoken");
+        const token = localStorage.getItem("accessToken");
+        const user: IUsuario = jwt.decode(token);
 
-      if (user?.rolId === 1) {
-        router.push("/admin");
+        if (user?.rolId === 1) {
+          router.push("/admin");
+        } else {
+          router.push("/user");
+        }
       } else {
-        router.push("/user");
+        alert("Login fallido. Por favor, verifica tus credenciales.");
       }
-    } else {
-      alert("Login fallido. Por favor, verifica tus credenciales.");
+    } catch (error) {
+      console.error("Error en el manejo del login:", error);
     }
   };
 
@@ -172,7 +177,9 @@ const FormularioBueno = () => {
             onChange={(e) => handleChangeLogin(e)}
           />
 
-          <button onClick={() => handleLogin()}>Ingresar</button>
+          <button type="button" onClick={() => handleLogin()}>
+            Ingresar
+          </button>
         </form>
       </div>
     </div>
