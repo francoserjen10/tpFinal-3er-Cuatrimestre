@@ -116,7 +116,7 @@ export const NavBar = () => {
         <div className="botonSesion">
           
         <button className="imagenBoton" onClick={toggleFormulario}>
-      <img src="./imagenes/imagenBoton/imagenLogin.png" alt="Imagen" />
+      <img src="../imagenes/imagenBoton/imagenLogin.png" alt="Imagen" />
       </button>
           {mostrarFormulario && (
             <div className={mostrarFormulario ? "mainForm" : "mainForm hidden"}>
