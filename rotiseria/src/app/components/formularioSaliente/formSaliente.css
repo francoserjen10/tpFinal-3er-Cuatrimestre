@@ -1,5 +1,5 @@
 .botonCerrar {
-  position: fixed;/* hace que no mueva otros componentes*/
+    position: fixed;/* hace que no mueva otros componentes*/
     background-color: transparent;
     border: none;
     color: white; 
