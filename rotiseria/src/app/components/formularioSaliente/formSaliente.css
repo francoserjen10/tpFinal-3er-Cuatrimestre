@@ -1,23 +1,22 @@
-
-
-.close-btn {
+.botonCerrar {
   position: fixed;/* hace que no mueva otros componentes*/
-  background-color: transparent;
-  border: none;
-  color: white; 
-  font-size: 24px; 
-  cursor: pointer;
-  padding: 0; 
-  width: 32px; 
-  height: 32px; 
-  line-height: 1; /* Asegura que el icono esté centrado verticalmente */
-  top: 10px; 
-  right: 10px; 
+    background-color: transparent;
+    border: none;
+    color: white; 
+    font-size: 24px; 
+    cursor: pointer;
+    padding: 0; 
+    width: 32px; 
+    height: 32px; 
+    line-height: 1; /* Asegura que el icono esté centrado verticalmente */
+    top: 10px; 
+    right: 10px; 
 }
 
-.close-btn:hover {
+.botonCerrar:hover {
   color: red; 
 }
+
 .main {
   width: 350px;
   height: 500px;
@@ -28,7 +27,6 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  backdrop-filter: blur(10px); /* Aplicar desenfoque */
   transform: translate(-50%, -50%);
   z-index: 1000; /* Ajusta este valor según sea necesario */
 }
@@ -41,13 +39,23 @@
 #chk{
   display: none;
     }
-.signup > form > label,
+.signup > form > label {
+  color: #fff;
+  font-size: 2.3em;
+  justify-content: center;
+  display: flex;
+  margin: 30px 0 auto;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+}
+
 .login > form>  label {
   color: #fff;
   font-size: 2.3em;
   justify-content: center;
   display: flex;
-  margin: 60px;
+  margin: 100px;
   font-weight: bold;
   cursor: pointer;
   transition: 0.5s ease-in-out;
@@ -56,16 +64,22 @@
 .signup > form > input,
 .login > form > input {
   width: 60%;
-  height: 40px;
+  height: 35px;
   background: #e0dede;
   justify-content: center;
   display: flex;
-  margin: 20px auto;
-  padding: 10px;
+  padding: 0 auto;
   border: none;
   outline: none;
   border-radius: 5px;
+  margin: 5px auto;
+
 }
+
+.signup > form > input:first-of-type {
+  margin-top: 30px;
+}
+
 .login > form > button,
 .signup > form > button {
   width: 52%;
@@ -119,3 +133,9 @@
   transform: scale(0.6);
 }
 
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5px; /* Ajusta este valor para mover el formulario hacia arriba o abajo */
+}

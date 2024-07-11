@@ -72,6 +72,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0px 0px 15px 0px;
 }
 
 .imagenBoton:hover {
@@ -113,7 +114,8 @@
     }
 
     .botonSesion {
-        width: 100%;
+        width: 50px;
+        height: 50px;
         justify-content: center;
         position: static;
         /* Resetear la posición del botón en vista móvil */

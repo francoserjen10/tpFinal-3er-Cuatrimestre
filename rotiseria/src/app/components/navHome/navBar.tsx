@@ -112,12 +112,12 @@ export const NavBar = () => {
         )}
       </ul>
 
-      {rolUser === null && (
+      {rolUser === null && ( 
         <div className="botonSesion">
-          <button className="btnForm" onClick={toggleFormulario}>
-            Iniciar Sesión
-          </button>
-
+          
+        <button className="imagenBoton" onClick={toggleFormulario}>
+      <img src="./imagenes/imagenBoton/imagenLogin.png" alt="Imagen" />
+      </button>
           {mostrarFormulario && (
             <div className={mostrarFormulario ? "mainForm" : "mainForm hidden"}>
               {/* Aca tambien se importa */}

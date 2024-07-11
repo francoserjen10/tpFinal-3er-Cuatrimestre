@@ -10,7 +10,7 @@ const FormularioBueno = () => {
   const [mostrarFormulario, setMostrarFormulario] = useState(false);
 
   const CerrarForm = () => {
-    console.log("Botón de sesión presionado");
+    console.log("Botón de cerrado presionado");
     if (mostrarFormulario == false) {
       setMostrarFormulario(!mostrarFormulario);
     }
@@ -94,11 +94,11 @@ const FormularioBueno = () => {
   return (
     <div id="formSaliente" className="main hidden ">
       <input type="checkbox" id="chk" />
-      <button className="close-btn" onClick={CerrarForm}>
+      <button className="botonCerrar" onClick={CerrarForm}>
         &times;
       </button>
       <div className="signup">
-        <form className="dflex">
+        <form className="formContainer">
           <label htmlFor="chk">Registrarse</label>
 
           <input
@@ -152,7 +152,7 @@ const FormularioBueno = () => {
 
       <div className="login">
         <form className="dflex">
-          <label htmlFor="chk">Iniciar Sesion</label>
+          <label htmlFor="chk">Login</label>
 
           <input
             type="email"
