@@ -1,12 +1,12 @@
 'use client'
 import { CarritoTabla } from "@/app/components/CarritoTabla/carritoTabla"
 import { Logo } from "@/app/components/logo/logo"
-import { NavHome } from "@/app/components/navHome/navHome"
+import NavBar from "@/app/components/navHome/navBar"
 export default function Home() {
     return(
         <>
         <Logo/>
-        <NavHome/>
+        <NavBar/>
         <CarritoTabla/>
         </>
     
