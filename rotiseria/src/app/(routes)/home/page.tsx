@@ -1,5 +1,4 @@
 "use client";
-import "bootstrap/dist/css/bootstrap.min.css";
 import { NavBar } from "@/app/components/navHome/navBar";
 import { Logo } from "@/app/components/logo/logo";
 import Carousel from "@/app/components/carruselOfertas/carruselOfertas";

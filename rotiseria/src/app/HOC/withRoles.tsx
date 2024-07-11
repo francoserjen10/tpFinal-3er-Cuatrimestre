@@ -1,7 +1,6 @@
 import { useRouter } from "next/navigation";
 
 function hasRequiredPermissions(roles: number[]): boolean {
-  if (typeof window !== "undefined") {
     const jwt = require("jsonwebtoken");
     const token = localStorage.getItem("accessToken");
     if (token) {
@@ -12,9 +11,8 @@ function hasRequiredPermissions(roles: number[]): boolean {
         return resultadoRoles;
       }
     }
+    return false;
   }
-  return false;
-}
 
 /**
  * Preguntar:
