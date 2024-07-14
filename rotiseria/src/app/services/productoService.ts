@@ -13,6 +13,7 @@ export async function getAllProductos(): Promise<IProducto[]> {
 };
 
 export async function createProduct(formData: FormData): Promise<IProducto | string> {
+    console.log("formData", formData);
     try {
         const response = await clienteAxios.post("/product/create-product", formData);
         return response.data || [];

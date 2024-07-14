@@ -1,18 +1,20 @@
 import { useRouter } from "next/navigation";
 
-function hasRequiredPermissions(roles: number[]): boolean {
-    const jwt = require("jsonwebtoken");
-    const token = localStorage.getItem("accessToken");
-    if (token) {
-      const respuesta = jwt.decode(token).rolId;
-      if (respuesta) {
-        const rol: number = respuesta;
-        const resultadoRoles = roles.some((r) => r === rol);
-        return resultadoRoles;
-      }
+function hasRequiredPermissions(roles: number[]): boolean | string {
+  const jwt = require("jsonwebtoken");
+  const token = localStorage.getItem("accessToken");
+
+  if (token) {
+    const respuesta = jwt.decode(token).rolId;
+
+    if (respuesta) {
+      const rol: number = respuesta;
+      const resultadoRoles = roles.some((r) => r === rol);
+      return resultadoRoles;
     }
-    return false;
   }
+  return false;
+}
 
 /**
  * Preguntar:
