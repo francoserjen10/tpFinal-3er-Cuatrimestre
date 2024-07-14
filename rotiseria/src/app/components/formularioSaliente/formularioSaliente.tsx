@@ -147,7 +147,7 @@ const FormularioBueno = () => {
             onChange={(e) => handleChangeRegister(e)}
           />
 
-          <button onClick={() => handleRegister()}>Registrarse</button>
+          <button type="button" onClick={() => handleRegister()}>Registrarse</button>
         </form>
       </div>
 
@@ -173,7 +173,7 @@ const FormularioBueno = () => {
             onChange={(e) => handleChangeLogin(e)}
           />
 
-          <button onClick={() => handleLogin()}>Ingresar</button>
+          <button type="button" onClick={() => handleLogin()}>Ingresar</button>
         </form>
       </div>
     </div>
