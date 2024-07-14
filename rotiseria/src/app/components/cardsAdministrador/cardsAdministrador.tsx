@@ -19,7 +19,6 @@ export const ModificacionesAdmin = () => {
         console.error("error al mostrar los productos:", error);
       }
     };
-
     fetchProductos();
   }, []);
 
@@ -48,7 +47,7 @@ export const ModificacionesAdmin = () => {
           <ActualizarProductos />
 
           {/* Eliminar */}
-          <EliminarProducto updateProductList={updateProductList}/>
+          <EliminarProducto updateProductList={updateProductList} />
         </div>
 
         {/* Mostrar el mensaje */}
