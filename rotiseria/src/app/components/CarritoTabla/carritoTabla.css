@@ -141,7 +141,7 @@
 
 .descripciones > tr > td > img {
     height: 90%;
-    width: 0%;
+    /*width: 0%;*/
 }
 
 /* SECCION DE FINALIZAR COMPRA */

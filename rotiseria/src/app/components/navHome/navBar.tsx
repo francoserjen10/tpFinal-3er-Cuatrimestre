@@ -41,6 +41,7 @@ export const NavBar = () => {
       const token = localStorage.getItem("accessToken");
       if (token) {
         const user: IUsuario = jwt.decode(token);
+        const idusuario = localStorage.setItem("idUsuario", user.id);
         console.log("Este es e navbaaarrr", user);
 
         if (user?.rolId === 1) {

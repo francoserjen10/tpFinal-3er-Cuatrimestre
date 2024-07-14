@@ -5,14 +5,17 @@ interface AgregarAlCarritoProps {
     id: number;
     name: string;
     price: number;
-    addToCart: (product: { id: number; name: string; price: number }) => void;
+    desc: string;
+    imgurl: string;
+    cantidad: number;
+    addToCart: (product: { id: number; name: string, price: number, desc: string, imgurl: string, cantidad: number }) => void;
 }
 
-const AgregarAlCarrito: React.FC<AgregarAlCarritoProps> = ({ id, name, price, addToCart }) => {
+const AgregarAlCarrito: React.FC<AgregarAlCarritoProps> = ({ id, name, price, desc, imgurl, cantidad, addToCart }) => {
     const handleClick = () => {
-        const product = { id, name, price };
+        const product = { id, name, price, desc, imgurl, cantidad };
         addToCart(product);
-        alert(`Producto ${name} con ID ${id} agregado al carrito`);
+        alert(`Producto ${name} con agregado al carrito`);
     };
 
     return (

@@ -7,7 +7,11 @@ import { IProducto } from "@/app/model/product.model";
 
 export const MenusUser = () => {
   const [productos, setProductos] = useState<IProducto[]>([]);
-  const [cart, setCarrito] = useState<IProducto[]>([]);
+  const [cart, setCarrito] = useState<IProducto[]>(() => {
+    // Obtener el carrito inicial desde sessionStorage
+    const storedCart = sessionStorage.getItem("cart");
+    return storedCart ? JSON.parse(storedCart) : [];
+  });
 
   useEffect(() => {
     const fetchProductos = async () => {
@@ -15,12 +19,17 @@ export const MenusUser = () => {
         const productos = await getAllProductos();
         setProductos(productos);
       } catch (error) {
-        console.error("error al mostrar los productos:", error);
+        console.error("Error al mostrar los productos:", error);
       }
     };
 
     fetchProductos();
   }, []);
+
+  useEffect(() => {
+    // Actualizar sessionStorage cada vez que el carrito cambie
+    sessionStorage.setItem("carrito", JSON.stringify(cart));
+  }, [cart]);
 
   const agregarAlCarrito = (producto: IProducto) => {
     setCarrito([...cart, producto]);
@@ -45,6 +54,9 @@ export const MenusUser = () => {
                   id={producto.id}
                   name={producto.name}
                   price={producto.price}
+                  desc={producto.description}
+                  imgurl={producto.urlImage || "../imagenes/imagenesFiltro/nofoto.png"}
+                  cantidad={1}
                   addToCart={agregarAlCarrito}
                 />
               </div>
