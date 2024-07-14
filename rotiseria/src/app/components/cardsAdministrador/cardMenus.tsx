@@ -20,6 +20,9 @@ export const MenusAdmin = ({ productos }: {productos: IProducto[]}) => {
             <div className="card-content">
               <h2 className="cardTitulo">{producto.name}</h2>
               <p className="cardTexto">{producto.description}</p>
+              <p className="cardTexto">{`$ ${producto.price}`}</p>
+              <p className="cardTexto">{producto.categoryId}</p>
+              <p className="cardTexto">{producto.price}</p>
 
               <div className="updateCardBoton">
                 <button></button>
