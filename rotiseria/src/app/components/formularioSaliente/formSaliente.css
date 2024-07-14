@@ -1,20 +1,21 @@
 .botonCerrar {
-    position: fixed;/* hace que no mueva otros componentes*/
-    background-color: transparent;
-    border: none;
-    color: white; 
-    font-size: 24px; 
-    cursor: pointer;
-    padding: 0; 
-    width: 32px; 
-    height: 32px; 
-    line-height: 1; /* Asegura que el icono esté centrado verticalmente */
-    top: 10px; 
-    right: 10px; 
+  position: fixed;/* hace que no mueva otros componentes*/
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  line-height: 1;/* Asegura que el icono esté centrado verticalmente */
+  top: 10px;
+  right: 10px;
+  z-index: 1500;
 }
 
 .botonCerrar:hover {
-  color: red; 
+  color: red;
 }
 
 .main {
@@ -28,7 +29,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 1000; /* Ajusta este valor según sea necesario */
+  z-index: 1000;
+  /* Ajusta este valor según sea necesario */
 }
 
 .signup {
@@ -36,10 +38,12 @@
   width: 100%;
   height: 100%;
 }
-#chk{
+
+#chk {
   display: none;
-    }
-.signup > form > label {
+}
+
+.signup>form>label {
   color: #fff;
   font-size: 2.3em;
   justify-content: center;
@@ -50,7 +54,7 @@
   transition: 0.5s ease-in-out;
 }
 
-.login > form>  label {
+.login>form>label {
   color: #fff;
   font-size: 2.3em;
   justify-content: center;
@@ -61,8 +65,8 @@
   transition: 0.5s ease-in-out;
 }
 
-.signup > form > input,
-.login > form > input {
+.signup>form>input,
+.login>form>input {
   width: 60%;
   height: 35px;
   background: #e0dede;
@@ -76,12 +80,12 @@
 
 }
 
-.signup > form > input:first-of-type {
+.signup>form>input:first-of-type {
   margin-top: 30px;
 }
 
-.login > form > button,
-.signup > form > button {
+.login>form>button,
+.signup>form>button {
   width: 52%;
   height: 40px;
   margin: 10px auto;
@@ -99,8 +103,8 @@
   cursor: pointer;
 }
 
-.login > form > button:hover,
-.signup > form > button:hover {
+.login>form>button:hover,
+.signup>form>button:hover {
   background: #b84444;
 }
 
@@ -112,7 +116,7 @@
   transition: 0.8s ease-in-out;
 }
 
-.login > form > label {
+.login>form>label {
   color: #8a3b3b;
   transform: scale(0.6);
 }
@@ -125,11 +129,11 @@
   transform: translateY(-500px);
 }
 
-#chk:checked~.login > form label {
+#chk:checked~.login>form label {
   transform: scale(1);
 }
 
-#chk:checked~.signup > form label {
+#chk:checked~.signup>form label {
   transform: scale(0.6);
 }
 
@@ -137,5 +141,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 5px; /* Ajusta este valor para mover el formulario hacia arriba o abajo */
+  margin-top: 5px;
+  /* Ajusta este valor para mover el formulario hacia arriba o abajo */
 }

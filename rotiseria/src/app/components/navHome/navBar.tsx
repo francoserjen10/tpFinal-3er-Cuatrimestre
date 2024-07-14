@@ -9,6 +9,11 @@ export const NavBar = () => {
   const [rolUser, setRolUser] = useState<number | null>(null);
   const router = useRouter();
   const [mostrarFormulario, setMostrarFormulario] = useState(false);
+  const [showLogoutPopup, setShowLogoutPopup] = useState(false);
+
+  const toggleLogoutPopup = () => {
+    setShowLogoutPopup(!showLogoutPopup);
+  };
 
   const toggleFormulario = () => {
     console.log("Botón de sesión presionado");
@@ -102,9 +107,6 @@ export const NavBar = () => {
               <p className="links">MIS PEDIDOS</p>
             </li>
             {/* Puede ser este <p> en el navBar o un boton con la imagen de un carrito */}
-            <li onClick={() => router.push("/user/carrito")}>
-              <p className="links">MI CARRITO</p>
-            </li>
             <li onClick={() => router.push("/user#linkcontacto")}>
               <p className="links">CONTACTENOS</p>
             </li>
@@ -112,12 +114,12 @@ export const NavBar = () => {
         )}
       </ul>
 
-      {rolUser === null && ( 
+      {rolUser === null && (
         <div className="botonSesion">
-          
-        <button className="imagenBoton" onClick={toggleFormulario}>
-      <img src="../imagenes/imagenBoton/imagenLogin.png" alt="Imagen" />
-      </button>
+
+          <button className="imagenBoton" onClick={toggleFormulario}>
+            <img src="../imagenes/imagenBoton/imagenLogin.png" alt="Imagen" />
+          </button>
           {mostrarFormulario && (
             <div className={mostrarFormulario ? "mainForm" : "mainForm hidden"}>
               {/* Aca tambien se importa */}
@@ -128,9 +130,29 @@ export const NavBar = () => {
       )}
 
       {rolUser !== null && (
-        <div className="cerrarSesion">
-          <button onClick={logOut}>Cerrar Sesion</button>
-        </div>
+        <>
+          <div className="carrito">
+            <button className="imagenBoton" onClick={() => router.push("/user/carrito")}><img src="../imagenes/imagenBoton/imagenCarrito.png" alt="Imagen" /></button>
+          </div>
+
+
+          <div className="cerrarSesion">
+            <button onClick={toggleLogoutPopup}>
+              <img src="../imagenes/imagenBoton/imagenLogin.png" alt="Imagen" />
+            </button>
+            {showLogoutPopup && (
+              <div className="popup">
+                <p>¿Estás seguro de que quieres cerrar sesión?</p>
+                <div className="botonesPopup">
+                  <button onClick={logOut}>Cerrar sesión</button>
+                  <button onClick={toggleLogoutPopup}>Cancelar</button>
+                </div>
+
+              </div>
+            )}
+
+          </div>
+        </>
       )}
     </nav>
   );

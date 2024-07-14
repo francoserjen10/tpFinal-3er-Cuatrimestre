@@ -1,44 +1,92 @@
-.tituloRotiseria{
+
+.tituloRotiseria {
     text-align: center;
     margin-top: 40px;
     font-size: 40px;
-    background-color:#d3d1be ;
+    background-color: #d3d1be;
     padding-top: 15px;
-    color:#ac2424;
-}
-
-.containerInfo{
+    color: #ac2424;
+  }
+  
+  .containerInfo {
     display: flex;
     flex-direction: row;
     background-color: #d3d1be;
     color: #ac2424;
     padding: 2rem 2rem;
     margin-top: -10px;
-}
-
-.divInfo{
+  }
+  
+  .divInfo {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 50%;
     padding: .5rem;
-    text-align:justify;
-
-    & p{
-        font-size: 20px;
-        line-height: 1.5;
-    }
-}
-
-.divImagen{
+    text-align: justify;
+  }
+  
+  .divInfo p {
+    font-size: 20px;
+    line-height: 1.5;
+  }
+  
+  .divImagen {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
     padding: .5rem;
-} 
-.imagen {
+  }
+  
+  .imagen {
     border-radius: 10px;
     width: 700px;
     height: 350px;
-}
+  }
+  
+  @media (max-width: 992px) {
+    .imagen {
+      width: 100%;
+      height: auto;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .containerInfo {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .divInfo, .divImagen {
+      width: 100%;
+    }
+  
+    .imagen {
+      width: 100%;
+      height: auto;
+    }
+  
+    .tituloRotiseria {
+      font-size: 30px;
+    }
+  
+    .divInfo p {
+      font-size: 18px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .containerInfo {
+      padding: 1rem;
+    }
+  
+    .tituloRotiseria {
+      font-size: 25px;
+    }
+  
+    .divInfo p {
+      font-size: 16px;
+    }
+  }
+  
