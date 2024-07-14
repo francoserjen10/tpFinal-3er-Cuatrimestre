@@ -3,15 +3,12 @@ import './carritoTabla.css';
 export const CarritoTabla = () => {
     return (
         <>
-
+         <div className='carrito-bg'>
             <div className='principal'>
                 <div className='contenedor'>
                     <section className='encabezado'>
-
-                        <h1 className='titulo'>Carito de compras</h1>
-
+                        <h1 className='titulo'>Carrito de compras</h1>
                     </section>
-
 
                     <section className='cuerpo'>
                         <table>
@@ -26,7 +23,6 @@ export const CarritoTabla = () => {
                                     <th>eliminar</th>
                                 </tr>
                             </thead>
-
                             <tbody className='descripciones'>
                                 <tr>
                                     <td><img src="" alt="" /></td>
@@ -35,9 +31,9 @@ export const CarritoTabla = () => {
                                     <td>Hamburguesa con papas fritas</td>
                                     <td>$1000</td>
                                     <td>
-                                        <button className="botonResta">-</button>
+                                        <button className="botonSumaResta">-</button>
                                         <button className='cantidad'>1</button>
-                                        <button className='botonSuma'>+</button>
+                                        <button className='botonSumaResta'>+</button>
                                     </td>
                                     <td>
                                         <button className="trash-button">
@@ -50,52 +46,26 @@ export const CarritoTabla = () => {
                                         </button>
                                     </td>
                                 </tr>
-                            </tbody >
+                            </tbody>
                         </table>
                     </section>
+
+                    <div className="contenedorFinal">
+                        <div className="customSelectWrapper">
+                            <select className="contenedorOptions">
+                                <option>Seleccione envio</option>
+                                <option value="retiro">Retiro en sucursal($0)</option>
+                                <option value="motomandado">Motomandado ($2500)</option>
+                            </select>
+                        </div>
+                        <span>SubTotal: $1000</span>
+                        <span>Total a pagar: $1000</span>
+                        <button className="botonPagar">Pagar</button>
+                    </div>
+
                 </div>
-
-                <div className='contenedorFinal'>
-                    <section className='cuerpoFinal'>
-                        <table>
-                            <thead>
-                                <tr className='categoriasFinal'>
-                                    <th>Metodo de Envio</th>
-                                    <th>Forma de pago</th>
-                                    <th>precio</th>
-                                    <th>Pagar</th>
-
-                                </tr>
-                            </thead>
-
-                            <tbody className='descripcionesFinal'>
-                                <tr>
-                                    <td>
-                                        <select>
-                                            <option value="">Motomandado</option>
-                                            <option value="">Bicimandado</option>
-                                            <option value="">Retiro en sucursal</option>
-                                        </select>
-                                    </td>
-                                    <td><select>
-                                            <option value="">Tarjeta</option>
-                                            <option value="">Billetera virtual</option>
-                                            <option value="">Efectivo</option>
-                                        </select></td>
-                                    <td className='precios'><p>subtotal: 1000</p><p>total:1000</p></td>
-                                    <td><button className='botonPagar'>Pagar</button></td>
-                                </tr>
-                            </tbody >
-                        </table>
-                    </section>
-                </div>
-
-
-            </div >
+            </div>
+            </div>
         </>
     )
 }
-
-/* <tr><b>Total de items</b><td>items 3</td></tr>
-                                        <tr><b>Subtotal</b><td>subt 100</td></tr>
-                                        <tr><b>Total</b><td>totl 100</td></tr> */ 
