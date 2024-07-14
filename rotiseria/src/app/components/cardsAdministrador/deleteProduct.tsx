@@ -5,23 +5,28 @@ import {
 } from "@/app/services/productoService";
 import { useEffect, useState } from "react";
 
-export const EliminarProducto = () => {
+export const EliminarProducto = ({
+  updateProductList,
+}: {
+  updateProductList: () => Promise<IProducto[] | undefined>;
+}) => {
   const [productos, setProductos] = useState<IProducto[]>([]);
   const [SelectedProductId, setSelectedProductId] = useState<number | null>(
     null
   );
 
   useEffect(() => {
-    const fetchProductos = async () => {
-      try {
-        const productos = await getAllProductos();
-        setProductos(productos);
-      } catch (error) {
-        console.error("error al mostrar los productos:", error);
-      }
-    };
+    updateProductList();
+    // const fetchProductos = async () => {
+    //   try {
+    //     const productos = await getAllProductos();
+    //     setProductos(productos);
+    //   } catch (error) {
+    //     console.error("error al mostrar los productos:", error);
+    //   }
+    // };
 
-    fetchProductos();
+    // fetchProductos();
   }, []);
 
   const handleDeleteProduct = async (e: React.FormEvent) => {

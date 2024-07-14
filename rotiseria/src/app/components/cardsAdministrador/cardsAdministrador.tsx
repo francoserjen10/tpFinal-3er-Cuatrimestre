@@ -48,7 +48,7 @@ export const ModificacionesAdmin = () => {
           <ActualizarProductos />
 
           {/* Eliminar */}
-          <EliminarProducto />
+          <EliminarProducto updateProductList={updateProductList}/>
         </div>
 
         {/* Mostrar el mensaje */}
