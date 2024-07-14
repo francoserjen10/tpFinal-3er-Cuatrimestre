@@ -16,26 +16,24 @@ export const EliminarProducto = ({
   );
 
   useEffect(() => {
-    updateProductList();
-    // const fetchProductos = async () => {
-    //   try {
-    //     const productos = await getAllProductos();
-    //     setProductos(productos);
-    //   } catch (error) {
-    //     console.error("error al mostrar los productos:", error);
-    //   }
-    // };
-
-    // fetchProductos();
+    const fetchProductos = async () => {
+      try {
+        const productos = await getAllProductos();
+        setProductos(productos);
+      } catch (error) {
+        console.error("error al mostrar los productos:", error);
+      }
+    };
+    fetchProductos();
   }, []);
 
   const handleDeleteProduct = async (e: React.FormEvent) => {
     e.preventDefault();
     if (SelectedProductId !== null) {
       const response = await deleteProductById(SelectedProductId);
-      //Si se elimino correctamente tengo que corroborar que no haya ningun producto con ese id y luego dejar el valor del id en nulo
       if (response) {
-        setProductos(productos.filter((p) => p.id !== SelectedProductId));
+        const updatedProducts = await updateProductList();
+        setProductos(updatedProducts || []);
         setSelectedProductId(null);
       } else {
         console.log("Hubo un error al eliminar el producto!!!!!!!");
