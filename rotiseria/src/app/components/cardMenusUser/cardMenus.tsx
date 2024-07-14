@@ -7,6 +7,7 @@ import { IProducto } from "@/app/model/product.model";
 
 export const MenusUser = () => {
   const [productos, setProductos] = useState<IProducto[]>([]);
+  const [cart, setCarrito] = useState<IProducto[]>([]);
 
   useEffect(() => {
     const fetchProductos = async () => {
@@ -20,6 +21,10 @@ export const MenusUser = () => {
 
     fetchProductos();
   }, []);
+
+  const agregarAlCarrito = (producto: IProducto) => {
+    setCarrito([...cart, producto]);
+  };
 
   return (
     <>
@@ -36,12 +41,26 @@ export const MenusUser = () => {
               <p className="cardTexto">{producto.description}</p>
 
               <div className="cardBoton">
-                <AgregarAlCarrito />
-                {/*aca se agregar agregar al carrito*/}
+                <AgregarAlCarrito
+                  id={producto.id}
+                  name={producto.name}
+                  price={producto.price}
+                  addToCart={agregarAlCarrito}
+                />
               </div>
             </div>
           </div>
         ))}
+      </div>
+      <div>
+        <h2>Carrito:</h2>
+        <ul>
+          {cart.map((product) => (
+            <li key={product.id}>
+              {product.name} - ${product.price}
+            </li>
+          ))}
+        </ul>
       </div>
     </>
   );
