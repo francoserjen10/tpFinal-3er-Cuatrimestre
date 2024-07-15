@@ -8,14 +8,13 @@ import NavBar from "@/app/components/navHome/navBar";
 
 const UserMenus = () => {
   return (
-    <>
+    <div className="fondoPagina">
       <Logo />
       <NavBar />
       <IntroduccionMenus />
-      <div className="containerMenus">
         <MenusUser />
-      </div>
-    </>
+      
+    </div>
   );
 };
 export default withRoles(UserMenus, [2], "/home");

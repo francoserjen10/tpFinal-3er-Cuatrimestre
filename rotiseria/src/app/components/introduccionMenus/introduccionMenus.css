@@ -1,56 +1,97 @@
 .introduccion {
-    background-color: rgb(156, 156, 156);
+    background-color: rgb(141, 68, 68);
     padding: 10px;
+    display: flex;
+    overflow-x: auto; /* Habilita el desplazamiento horizontal */
+    white-space: nowrap; 
+    gap: 10px;
+}
+
+.contenedorBotones{
+    align-items: center;
+}
+
+.introduccion::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.introduccion::-webkit-scrollbar-thumb {
+    border-radius: .5rem;
+    background-color: #0004;
+    visibility: hidden;
+}
+
+.introduccion:hover::-webkit-scrollbar-thumb {
+    visibility: visible;
+}
+
+.contenedorEleccion > img {
+    width: 90%;
+    height: auto;
 }
 
 .contenedorEleccion {
-    display: inline-block;
-    height: 75px;
+    display: inline-flex; /* Cambia a inline-flex para alinear contenido interno */
+    align-items: center; /* Centra verticalmente el contenido dentro del botón */
+    justify-content: space-between; /* Añade espacio entre el texto y la imagen */
+    height: 85px;
     width: 180px;
     border-radius: 8px;
-    padding-left: 7px;
     font-size: 14px;
     font-weight: bold;
-    padding: 2px 60px 30px 3px;
     text-align: left;
     overflow: hidden;
     margin: 10px;
     border: none;
     cursor: pointer;
-    /* Añade un cursor de puntero para indicar que es un botón */
+    padding: 5px;
+    box-sizing: border-box; /* Asegura que el padding se incluya en las dimensiones totales */
+    flex-shrink: 0; /* Evita que los elementos se achiquen */
 }
 
 .contenedorEleccion:hover {
     border: 1px solid rgb(0, 0, 0);
-    /* Añade un borde rojo cuando se pasa el cursor sobre el botón */
 }
 
-.estiloCarnes {
-    background-color: rgb(255, 165, 46);
+.posicionTexto {
+    flex: 1; /* Hace que el texto ocupe el espacio disponible */
+    text-align: left;
 }
+/* COLORES PARA CADA FILTRO */
 
-.estiloBebidas {
-    background-color: white;
+.estiloEnsaladas {
+    background-color: rgb(255, 254, 200);
 }
 
 .estiloPastas {
-    background-color: rgb(133, 165, 57);
+    background-color: rgb(241, 213, 213);
 }
 
-.regularImagen {
-    height: 70px;
-    width: 80px;
-    margin-left: 90%;
-    margin-top: -30px;
-    object-fit: cover
+.estiloCarnes {
+    background-color: rgb(240, 194, 135);
 }
 
-/* Esto lo meti para no cambiarte lo que hiciste, simplemente le agregue esto */
-/* Las imagenes estan en las carpetas de imagenes donde metiste todas las anteriores */
-.empanadas .regularImagen {
-    height: 70px;
-    width: 80px;
-    margin-left: 90%;
-    margin-top: -40px;
-    object-fit: cover
+.estiloGuarniciones {
+    background-color: antiquewhite;
 }
+
+.estiloBebidas {
+    background-color: rgb(227, 198, 255);
+}
+
+.estiloSalsas {
+    background-color: rgb(241, 199, 225);
+}
+
+.estiloPizzas {
+    background-color: rgb(241, 255, 227) ;
+}
+
+.estiloEmpanadas {
+    background-color: bisque;
+}
+
+
+
+

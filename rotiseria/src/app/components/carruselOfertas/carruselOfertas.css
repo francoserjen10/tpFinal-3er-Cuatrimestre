@@ -1,4 +1,20 @@
+.content {
+    backdrop-filter: blur(3px);
+    padding: 1%;
+    border-radius: 10px;
+}
 
+.botonEncargar {
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.botonEncargar:hover {
+    background: #d65858;
+    color: #fff;
+    transition: 0.2s;
+}
 
 .container {
     min-width: 100%;
@@ -98,7 +114,7 @@
     animation: animate 1s ease-in-out 0.3s 1 forwards;
 }
 
-.content button {
+.content > button {
     padding: 10px 20px;
     border: none;
     cursor: pointer;
@@ -128,19 +144,19 @@
     align-items: center;
 }
 
-.button button {
+.button > button {
     width: 40px;
     height: 35px;
     border-radius: 8px;
     border: none;
     cursor: pointer;
     margin: 0 5px;
-    border: 1px solid #000;
     transition: 0.3s;
 }
 
-.button button:hover {
-    background: #ababab;
+.button > button:hover {
+    background: #d65858;
     color: #fff;
+    transition: 0.2s;
 }
 

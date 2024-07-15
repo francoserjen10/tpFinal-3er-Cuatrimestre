@@ -23,12 +23,23 @@ export async function createProduct(formData: FormData): Promise<IProducto | str
     }
 };
 
-export async function deleteProductById(id:number): Promise<any> {
+export async function updateProduct(id: number, formData: FormData): Promise<IProducto | string> {
+    try {
+        // Aca va  el id pero tenog fomr data
+        const response = await clienteAxios.put(`/product/${id}`, formData);
+        return response.data || [];
+    } catch (Error) {
+        console.error(Error)
+        return "Entre al retorno del servicio de update ERRORRR!!!"
+    }
+}
+
+export async function deleteProductById(id: number): Promise<any> {
     try {
         const response = await clienteAxios.delete(`/product/${id}`);
         return response || [];
     } catch (Error) {
         console.error(Error)
         return "Ocurrio un error al eliminar el producto";
-    } 
+    }
 };

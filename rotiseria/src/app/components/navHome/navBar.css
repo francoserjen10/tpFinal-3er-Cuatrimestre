@@ -1,11 +1,15 @@
 .menu {
     background-color: #ac2424;
     height: 55px;
-    width: 100%;
+    min-width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
+    position: sticky;
+    top: 0; /* Se mantiene en la parte superior del contenedor */
+    border-bottom: 0.2px solid rgb(255, 255, 255);
+    z-index: 10;
 }
 
 .menu .items {
@@ -16,12 +20,15 @@
     padding: 0;
 }
 
-.menu .items li {
-    margin-right: 15px;
+.menu .items > li {
+    align-items: center;
+    place-items: center;
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .menu .items .links {
+    place-items: center;
     padding: 7px 13px;
     text-decoration: none;
     font-size: 18px;
@@ -31,7 +38,7 @@
     transition: font-size 0.3s ease, color 0.3s ease;
 }
 
-.menu .items li:hover .links {
+.menu .items > li:hover .links {
     font-size: 20px;
     color: yellow;
 }
@@ -73,6 +80,7 @@
 .cerrarSesion {
     position: absolute;
     right: 20px;
+    margin-top: 14px;
 }
 
 .cerrarSesion:hover > button {
@@ -137,6 +145,7 @@
 }
 
 .carrito {
+    margin-top: 14px;
     position: absolute;
     right: 80px;
 }
