@@ -33,6 +33,7 @@ export const EliminarProducto = ({
       const response = await deleteProductById(SelectedProductId);
       if (response) {
         const updatedProducts = await updateProductList();
+        alert("Producto eliminado con exito!")
         setProductos(updatedProducts || []);
         setSelectedProductId(null);
       } else {

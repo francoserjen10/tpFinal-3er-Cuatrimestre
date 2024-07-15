@@ -2,7 +2,11 @@ import { IProducto } from "@/app/model/product.model";
 import { createProduct } from "@/app/services/productoService";
 import { useState } from "react";
 
-export const CrearCards = ({ updateProductList }: {updateProductList: () => Promise<IProducto[] | undefined> }) => {
+export const CrearCards = ({
+  updateProductList,
+}: {
+  updateProductList: () => Promise<IProducto[] | undefined>;
+}) => {
   const [productState, setProductState] = useState<IProducto>({
     name: "",
     description: "",
@@ -12,7 +16,6 @@ export const CrearCards = ({ updateProductList }: {updateProductList: () => Prom
   });
 
   const [fileState, setFileState] = useState<File | null>(null);
-
 
   // Manejo los cambios de los inputs
   const handleChangeProduct = (e: any) => {
@@ -40,6 +43,7 @@ export const CrearCards = ({ updateProductList }: {updateProductList: () => Prom
 
     const productCreateSuccessfully = await createProduct(formData);
     if (productCreateSuccessfully) {
+      alert("Producto creado con exito!")
       // Aca puedo volver a mostrar el listado de productos para no tener que recargar toda la pagina de nuevo
       updateProductList();
       setProductState({
