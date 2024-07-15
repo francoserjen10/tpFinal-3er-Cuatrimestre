@@ -103,20 +103,28 @@ export const NavBar = () => {
             <li onClick={() => router.push("/user/menus")}>
               <p className="links">MENUS</p>
             </li>
-            <li onClick={() => router.push("/user/misPedidos")}>
-              <p className="links">MIS PEDIDOS</p>
-            </li>
             {/* Puede ser este <p> en el navBar o un boton con la imagen de un carrito */}
             <li onClick={() => router.push("/user#linkcontacto")}>
               <p className="links">CONTACTENOS</p>
             </li>
+
+            <div className="carrito">
+              <button
+                className="imagenBoton"
+                onClick={() => router.push("/user/carrito")}
+              >
+                <img
+                  src="../imagenes/imagenBoton/imagenCarrito.png"
+                  alt="Imagen"
+                />
+              </button>
+            </div>
           </>
         )}
       </ul>
 
       {rolUser === null && (
         <div className="botonSesion">
-
           <button className="imagenBoton" onClick={toggleFormulario}>
             <img src="../imagenes/imagenBoton/imagenLogin.png" alt="Imagen" />
           </button>
@@ -131,11 +139,6 @@ export const NavBar = () => {
 
       {rolUser !== null && (
         <>
-          <div className="carrito">
-            <button className="imagenBoton" onClick={() => router.push("/user/carrito")}><img src="../imagenes/imagenBoton/imagenCarrito.png" alt="Imagen" /></button>
-          </div>
-
-
           <div className="cerrarSesion">
             <button onClick={toggleLogoutPopup}>
               <img src="../imagenes/imagenBoton/imagenLogin.png" alt="Imagen" />
@@ -147,10 +150,8 @@ export const NavBar = () => {
                   <button onClick={logOut}>Cerrar sesión</button>
                   <button onClick={toggleLogoutPopup}>Cancelar</button>
                 </div>
-
               </div>
             )}
-
           </div>
         </>
       )}
