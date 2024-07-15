@@ -35,6 +35,8 @@ export const CarritoTabla = () => {
             //setProductos(nuevaLista);
             console.log(nuevoCarrito);
             sessionStorage.setItem("carrito", "");
+            alert("Tu compra ha sido confirmada!");
+            setCarrito([]);
             return nuevoCarrito;
         } catch (error) {
             console.error("error al crear un nuevo carrito:", error);
@@ -127,11 +129,6 @@ export const CarritoTabla = () => {
             sessionStorage.setItem("carrito", JSON.stringify(nuevoCarrito)); // Actualiza sessionStorage
         }
     };
-
-    const handleCarritoCreation = () => {
-        alert("Se compro")
-        createNuevoCarrito;
-    }
 
     return (
         <>
