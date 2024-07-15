@@ -79,7 +79,7 @@ const FormularioBueno = () => {
     };
     const registerExitoso = await registerUser(user);
     if (registerExitoso) {
-      // mostrarAlert();
+      alert("usuario creado correctamente");
       setUsuarioRegister({
         name: "",
         lastName: "",

@@ -50,6 +50,7 @@ export const ActualizarProductos = ({
         SelectedProduct.id,
         formData
       );
+      alert("Producto actualizado con exito!");
       updateProductList();
       setSelectedProduct({
         name: "",
