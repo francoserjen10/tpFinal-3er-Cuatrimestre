@@ -34,6 +34,7 @@ export const CarritoTabla = () => {
             console.log(idusuarioInt);
             //setProductos(nuevaLista);
             console.log(nuevoCarrito);
+            sessionStorage.setItem("carrito", "");
             return nuevoCarrito;
         } catch (error) {
             console.error("error al crear un nuevo carrito:", error);
