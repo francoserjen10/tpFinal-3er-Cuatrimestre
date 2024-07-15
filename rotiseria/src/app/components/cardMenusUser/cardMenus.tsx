@@ -7,6 +7,11 @@ import { IProducto } from "@/app/model/product.model";
 
 export const MenusUser = () => {
   const [productos, setProductos] = useState<IProducto[]>([]);
+  const [cart, setCarrito] = useState<IProducto[]>(() => {
+    // Obtener el carrito inicial desde sessionStorage
+    const storedCart = sessionStorage.getItem("carrito");
+    return storedCart ? JSON.parse(storedCart) : [];
+  });
 
   useEffect(() => {
     const fetchProductos = async () => {
