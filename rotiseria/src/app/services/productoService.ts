@@ -19,7 +19,7 @@ export async function createProduct(formData: FormData): Promise<IProducto | str
         return response.data || [];
     } catch (Error) {
         console.error(Error)
-        return "Ocurrio un error al crear el producto";
+        return "Errooooorr!!!!! del front servicio";
     }
 };
 

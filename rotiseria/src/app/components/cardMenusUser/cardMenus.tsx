@@ -27,7 +27,7 @@ export const MenusUser = () => {
         {productos.map((producto) => (
           <div key={producto.id} className="card">
             <img
-              src={producto.urlImage}
+              src={producto.urlImage || "../imagenes/imagenesFiltro/nofoto.png"}
               alt={`Imagen de ${producto.name}`}
               className="card-img"
             />

@@ -5,7 +5,11 @@ import {
 } from "@/app/services/productoService";
 import { useEffect, useState } from "react";
 
-export const EliminarProducto = () => {
+export const EliminarProducto = ({
+  updateProductList,
+}: {
+  updateProductList: () => Promise<IProducto[] | undefined>;
+}) => {
   const [productos, setProductos] = useState<IProducto[]>([]);
   const [SelectedProductId, setSelectedProductId] = useState<number | null>(
     null
@@ -20,7 +24,6 @@ export const EliminarProducto = () => {
         console.error("error al mostrar los productos:", error);
       }
     };
-
     fetchProductos();
   }, []);
 
@@ -28,9 +31,9 @@ export const EliminarProducto = () => {
     e.preventDefault();
     if (SelectedProductId !== null) {
       const response = await deleteProductById(SelectedProductId);
-      //Si se elimino correctamente tengo que corroborar que no haya ningun producto con ese id y luego dejar el valor del id en nulo
       if (response) {
-        setProductos(productos.filter((p) => p.id !== SelectedProductId));
+        const updatedProducts = await updateProductList();
+        setProductos(updatedProducts || []);
         setSelectedProductId(null);
       } else {
         console.log("Hubo un error al eliminar el producto!!!!!!!");
