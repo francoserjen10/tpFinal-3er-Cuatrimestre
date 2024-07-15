@@ -47,11 +47,12 @@ header {
     align-items: center;
     justify-content: flex-start;
     background-color: #791c1c;
-    height: 400px;
+    height: 0 auto;
     width: 300px;
     border-radius: 20px;
     flex-direction: column;
-    padding-top: 35px;
+    /* padding-top: 35px; */
+    padding: 30px 15px;
     gap: 25px;
     flex: 1 1 300px;
 }
@@ -90,13 +91,12 @@ option {
 }
 
 .mostrarProductos {
-    width: 90%;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    gap: 50px;
-    margin-bottom: 100px;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Ajusta el número de columnas */
+    gap: 20px; /* Espacio entre las tarjetas */
+    max-width: 1200px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centrar el contenedor */
+    padding: 20px;
 }
 
 .mostrarProductos > div {
