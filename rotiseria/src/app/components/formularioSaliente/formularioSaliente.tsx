@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React, { useState } from "react";
 import "./formSaliente.css";
 import { useRouter } from "next/navigation";
@@ -32,6 +32,19 @@ const FormularioBueno = () => {
     password: "",
   });
 
+  const [errors, setErrors] = useState({
+    email: "",
+    password: "",
+  });
+
+  const [registerErrors, setRegisterErrors] = useState({
+    name: "",
+    lastName: "",
+    dni: "",
+    email: "",
+    password: "",
+  });
+
   const handleChangeLogin = (e: any) => {
     const { name, value } = e.target;
     setUsuario((prevState) => ({
@@ -40,7 +53,67 @@ const FormularioBueno = () => {
     }));
   };
 
+  const validateInputs = () => {
+    const newErrors = { email: "", password: "" };
+    let hasError = false;
+
+    if (!usuario.email) {
+      newErrors.email = "El campo Email es obligatorio.";
+      hasError = true;
+    }
+
+    if (!usuario.password) {
+      newErrors.password = "El campo Contraseña es obligatorio.";
+      hasError = true;
+    }
+
+    setErrors(newErrors);
+    return !hasError;
+  };
+
+  const validateRegisterInputs = () => {
+    const newErrors = {
+      name: "",
+      lastName: "",
+      dni: "",
+      email: "",
+      password: "",
+    };
+    let hasError = false;
+
+    if (!usuarioRegister.name) {
+      newErrors.name = "El campo Nombre es obligatorio.";
+      hasError = true;
+    }
+
+    if (!usuarioRegister.lastName) {
+      newErrors.lastName = "El campo Apellido es obligatorio.";
+      hasError = true;
+    }
+
+    if (!usuarioRegister.dni) {
+      newErrors.dni = "El campo DNI es obligatorio.";
+      hasError = true;
+    }
+
+    if (!usuarioRegister.email) {
+      newErrors.email = "El campo Email es obligatorio.";
+      hasError = true;
+    }
+
+    if (!usuarioRegister.password) {
+      newErrors.password = "El campo Contraseña es obligatorio.";
+      hasError = true;
+    }
+
+    setRegisterErrors(newErrors);
+    return !hasError;
+  };
+
   const handleLogin = async () => {
+    if (!validateInputs()) {
+      return;
+    }
     const body = {
       email: usuario.email,
       password: usuario.password,
@@ -70,6 +143,9 @@ const FormularioBueno = () => {
   };
 
   const handleRegister = async () => {
+    if (!validateRegisterInputs()) {
+      return;
+    }
     const user: IUsuario = {
       name: usuarioRegister.name,
       lastName: usuarioRegister.lastName,
@@ -110,7 +186,7 @@ const FormularioBueno = () => {
             value={usuarioRegister.name}
             onChange={(e) => handleChangeRegister(e)}
           />
-
+ {/* {registerErrors.name && <span className="error">{registerErrors.name}</span>} */}
           <input
             type="text"
             name="lastName"
@@ -119,7 +195,7 @@ const FormularioBueno = () => {
             value={usuarioRegister.lastName}
             onChange={(e) => handleChangeRegister(e)}
           />
-
+ {/* {registerErrors.lastName && <span className="error">{registerErrors.lastName}</span>} */}
           <input
             type="number"
             name="dni"
@@ -128,7 +204,7 @@ const FormularioBueno = () => {
             value={usuarioRegister.dni}
             onChange={(e) => handleChangeRegister(e)}
           />
-
+{/* {registerErrors.dni && <span className="error">{registerErrors.dni}</span>} */}
           <input
             type="email"
             name="email"
@@ -137,7 +213,7 @@ const FormularioBueno = () => {
             value={usuarioRegister.email}
             onChange={(e) => handleChangeRegister(e)}
           />
-
+{/* {registerErrors.email && <span className="error">{registerErrors.email}</span>} */}
           <input
             type="password"
             name="password"
@@ -146,8 +222,10 @@ const FormularioBueno = () => {
             value={usuarioRegister.password}
             onChange={(e) => handleChangeRegister(e)}
           />
-
-          <button type="button" onClick={() => handleRegister()}>Registrarse</button>
+{/* {registerErrors.password && <span className="error">{registerErrors.password}</span>} */}
+          <button type="button" onClick={() => handleRegister()}>
+            Registrarse
+          </button>
         </form>
       </div>
 
@@ -163,6 +241,7 @@ const FormularioBueno = () => {
             value={usuario.email}
             onChange={(e) => handleChangeLogin(e)}
           />
+          {errors.email && <span className="error">{errors.email}</span>}
 
           <input
             type="password"
@@ -173,7 +252,11 @@ const FormularioBueno = () => {
             onChange={(e) => handleChangeLogin(e)}
           />
 
-          <button type="button" onClick={() => handleLogin()}>Ingresar</button>
+          {errors.password && <span className="error">{errors.password}</span>}
+
+          <button type="button" onClick={() => handleLogin()}>
+            Ingresar
+          </button>
         </form>
       </div>
     </div>
