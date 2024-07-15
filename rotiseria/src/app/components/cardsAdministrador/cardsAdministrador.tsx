@@ -44,22 +44,16 @@ export const ModificacionesAdmin = () => {
           <CrearCards updateProductList={updateProductList} />
 
           {/* Editar */}
-          <ActualizarProductos />
+          <ActualizarProductos updateProductList={updateProductList} />
 
           {/* Eliminar */}
           <EliminarProducto updateProductList={updateProductList} />
-        </div>
-
-        {/* Mostrar el mensaje */}
-        <div className="contenedorMensaje">
-          <div id="mensaje"></div>
         </div>
 
         {/* Productos */}
         <div className="contenedorProductos">
           <h2>Productos</h2>
           <div className="mostrarProductos" id="mostrarProductos">
-            Aca muestro los productos
             <MenusAdmin productos={productos} />
           </div>
         </div>
