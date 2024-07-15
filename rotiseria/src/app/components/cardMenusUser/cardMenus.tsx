@@ -19,12 +19,21 @@ export const MenusUser = () => {
         const productos = await getAllProductos();
         setProductos(productos);
       } catch (error) {
-        console.error("error al mostrar los productos:", error);
+        console.error("Error al mostrar los productos:", error);
       }
     };
 
     fetchProductos();
   }, []);
+
+  useEffect(() => {
+    // Actualizar sessionStorage cada vez que el carrito cambie
+    sessionStorage.setItem("carrito", JSON.stringify(cart));
+  }, [cart]);
+
+  const agregarAlCarrito = (producto: IProducto) => {
+    setCarrito([...cart, producto]);
+  };
 
   return (
     <>
@@ -41,12 +50,29 @@ export const MenusUser = () => {
               <p className="cardTexto">{producto.description}</p>
 
               <div className="cardBoton">
-                <AgregarAlCarrito />
-                {/*aca se agregar agregar al carrito*/}
+                <AgregarAlCarrito
+                  id={producto.id}
+                  name={producto.name}
+                  price={producto.price}
+                  desc={producto.description}
+                  imgurl={producto.urlImage || "../imagenes/imagenesFiltro/nofoto.png"}
+                  cantidad={1}
+                  addToCart={agregarAlCarrito}
+                />
               </div>
             </div>
           </div>
         ))}
+      </div>
+      <div>
+        <h2>Carrito:</h2>
+        <ul>
+          {cart.map((product) => (
+            <li key={product.id}>
+              {product.name} - ${product.price}
+            </li>
+          ))}
+        </ul>
       </div>
     </>
   );
