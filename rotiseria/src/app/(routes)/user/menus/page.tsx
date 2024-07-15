@@ -8,13 +8,13 @@ import NavBar from "@/app/components/navHome/navBar";
 
 const UserMenus = () => {
   return (
-    <>
+    <div className="fondoPagina">
       <Logo />
       <NavBar />
       <IntroduccionMenus />
         <MenusUser />
       
-    </>
+    </div>
   );
 };
 export default withRoles(UserMenus, [2], "/home");
