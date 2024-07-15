@@ -4,9 +4,7 @@ import "./cardMenus.css";
 // import { useEffect, useState } from "react";
 import { IProducto } from "@/app/model/product.model";
 
-export const MenusAdmin = ({ productos }: {productos: IProducto[]}) => {
-
-
+export const MenusAdmin = ({ productos }: { productos: IProducto[] }) => {
   return (
     <>
       <div className="productosContainer">
@@ -22,12 +20,6 @@ export const MenusAdmin = ({ productos }: {productos: IProducto[]}) => {
               <p className="cardTexto">{producto.description}</p>
               <p className="cardTexto">{`$ ${producto.price}`}</p>
               <p className="cardTexto">{producto.categoryId}</p>
-              <p className="cardTexto">{producto.price}</p>
-
-              <div className="updateCardBoton">
-                <button></button>
-                {/*aca se agregar Actualizar el producto*/}
-              </div>
             </div>
           </div>
         ))}
