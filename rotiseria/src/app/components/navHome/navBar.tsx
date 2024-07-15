@@ -85,9 +85,9 @@ export const NavBar = () => {
             <li onClick={() => router.push("/admin")}>
               <p className="links">MODIFICACIONES</p>
             </li>
-            <li onClick={() => router.push("/admin/administracion")}>
+            {/* <li onClick={() => router.push("/admin/administracion")}>
               <p className="links">ADMINISTRACION</p>
-            </li>
+            </li> */}
           </>
         )}
 

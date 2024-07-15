@@ -2,8 +2,11 @@
 import "./introduccionMenus.css";
 
 const ClikearFiltro = () => {
+
+  
+
   return (
-    <div className="contenedorBotones">
+    <>
       <button className="contenedorEleccion estiloEmpanadas">
         <p className="posicionTexto">Empanadas</p>
         <img
@@ -69,7 +72,7 @@ const ClikearFiltro = () => {
       </button>
 
      
-    </div>
+    </>
   );
 };
 
