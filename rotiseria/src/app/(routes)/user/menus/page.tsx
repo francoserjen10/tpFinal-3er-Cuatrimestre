@@ -12,9 +12,8 @@ const UserMenus = () => {
       <Logo />
       <NavBar />
       <IntroduccionMenus />
-      <div className="containerMenus">
         <MenusUser />
-      </div>
+      
     </>
   );
 };

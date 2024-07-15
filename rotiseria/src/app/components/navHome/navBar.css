@@ -6,6 +6,9 @@
     justify-content: center;
     align-items: center;
     position: relative;
+    position: sticky;
+  top: 0; /* Se mantiene en la parte superior del contenedor */
+  border-bottom: 0.2px solid rgb(255, 255, 255);
 }
 
 .menu .items {
@@ -16,9 +19,10 @@
     padding: 0;
 }
 
-.menu .items li {
+.menu .items > li {
     margin-right: 15px;
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .menu .items .links {
@@ -31,7 +35,7 @@
     transition: font-size 0.3s ease, color 0.3s ease;
 }
 
-.menu .items li:hover .links {
+.menu .items > li:hover .links {
     font-size: 20px;
     color: yellow;
 }
@@ -52,7 +56,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0px 0px 15px 0px;
+    margin: 15px 0px 15px 0px;
 }
 
 .imagenBoton:hover {

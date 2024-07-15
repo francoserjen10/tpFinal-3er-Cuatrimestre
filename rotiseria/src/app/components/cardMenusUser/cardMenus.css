@@ -1,6 +1,14 @@
+.productosContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Ajusta el número de columnas */
+    gap: 20px; /* Espacio entre las tarjetas */
+    max-width: 1200px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centrar el contenedor */
+    padding: 20px; 
+}
 .card {
-    background-color: #fff;
-    border-radius: 10px 10px 0px 0px;
+    background-color: #f0f0f0;
+    border-radius: 10px 10px ;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     overflow: hidden;
     width: 300px;
@@ -8,10 +16,7 @@
     text-align: center;
 }
 
-.card-img {
-    width: 100%;
-    height: auto;
-}
+
 
 .cardContent {
     padding: 15px;
@@ -37,6 +42,7 @@
     border-radius: 5px;
     border-style: none;
     font-size: 17px;
+    cursor: pointer;
 }
 
 .cardBoton button:hover {

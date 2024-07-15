@@ -61,7 +61,7 @@ export const Contacto = () => {
         </div>
 
         <div className='contactenos d-flex flex-column justify-content-center formulario'>
-          <h4>CONTACTANOS</h4>
+          <h4>CONTACTENOS</h4>
           <form className="row g-3" id="form" onSubmit={enviarContacto}>
             <label htmlFor="validationServer01" className="form-label col-md-2">Asunto</label>
             <div className="col-md-10">

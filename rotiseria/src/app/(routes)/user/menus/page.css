@@ -1,8 +1,0 @@
-.containerMenus {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 10px;
-    max-width: 1200px;
-    margin: 0 auto; /* Centrar la cuadrícula */
-    padding: 20px; /* Añadir un poco de espacio alrededor */
-}
