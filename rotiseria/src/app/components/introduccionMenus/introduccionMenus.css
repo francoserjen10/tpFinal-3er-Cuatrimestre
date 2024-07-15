@@ -5,6 +5,7 @@
     overflow-x: auto; /* Habilita el desplazamiento horizontal */
     white-space: nowrap; 
     gap: 10px;
+    justify-content: center;
 }
 
 .contenedorBotones{

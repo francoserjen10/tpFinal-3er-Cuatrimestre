@@ -48,6 +48,7 @@ export const MenusUser = () => {
             <div className="cardContent">
               <h2 className="cardTitulo">{producto.name}</h2>
               <p className="cardTexto">{producto.description}</p>
+              <p className="cardTexto">{`$ ${producto.price}`}</p>
 
               <div className="cardBoton">
                 <AgregarAlCarrito
