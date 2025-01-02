@@ -3,12 +3,13 @@ import axios from 'axios';
 
 const createClient = () => {
     //Me aseguro de acceder al local storage cuando estoy del lado del cliente
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
     let token = null;
     if (typeof window !== 'undefined') {
         token = localStorage.getItem("accessToken");
     }
     const cliente = axios.create({
-        baseURL: 'http://localhost:8080',
+        baseURL: apiUrl,
         headers: {
             Authorization: `Bearer ${token}`,
         }
