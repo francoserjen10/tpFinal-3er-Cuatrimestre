@@ -94,6 +94,9 @@ const FormularioBueno = () => {
     if (!usuarioRegister.dni) {
       newErrors.dni = "El campo DNI es obligatorio.";
       hasError = true;
+    } else if (usuarioRegister.dni.toString().length > 8) {
+      newErrors.dni = "El campo DNI no coincide con la cantidad de caracteres.";
+      hasError = true;
     }
 
     if (!usuarioRegister.email) {
@@ -186,7 +189,9 @@ const FormularioBueno = () => {
             value={usuarioRegister.name}
             onChange={(e) => handleChangeRegister(e)}
           />
- {/* {registerErrors.name && <span className="error">{registerErrors.name}</span>} */}
+          {registerErrors.name && (
+            <span className="error">{registerErrors.name}</span>
+          )}
           <input
             type="text"
             name="lastName"
@@ -195,7 +200,9 @@ const FormularioBueno = () => {
             value={usuarioRegister.lastName}
             onChange={(e) => handleChangeRegister(e)}
           />
- {/* {registerErrors.lastName && <span className="error">{registerErrors.lastName}</span>} */}
+          {registerErrors.lastName && (
+            <span className="error">{registerErrors.lastName}</span>
+          )}
           <input
             type="number"
             name="dni"
@@ -204,7 +211,9 @@ const FormularioBueno = () => {
             value={usuarioRegister.dni}
             onChange={(e) => handleChangeRegister(e)}
           />
-{/* {registerErrors.dni && <span className="error">{registerErrors.dni}</span>} */}
+          {registerErrors.dni && (
+            <span className="error">{registerErrors.dni}</span>
+          )}
           <input
             type="email"
             name="email"
@@ -213,7 +222,9 @@ const FormularioBueno = () => {
             value={usuarioRegister.email}
             onChange={(e) => handleChangeRegister(e)}
           />
-{/* {registerErrors.email && <span className="error">{registerErrors.email}</span>} */}
+          {registerErrors.email && (
+            <span className="error">{registerErrors.email}</span>
+          )}
           <input
             type="password"
             name="password"
@@ -222,7 +233,9 @@ const FormularioBueno = () => {
             value={usuarioRegister.password}
             onChange={(e) => handleChangeRegister(e)}
           />
-{/* {registerErrors.password && <span className="error">{registerErrors.password}</span>} */}
+          {registerErrors.password && (
+            <span className="error">{registerErrors.password}</span>
+          )}
           <button type="button" onClick={() => handleRegister()}>
             Registrarse
           </button>

@@ -1,5 +1,6 @@
 .botonCerrar {
-  position: fixed;/* hace que no mueva otros componentes*/
+  position: fixed;
+  /* hace que no mueva otros componentes*/
   background-color: transparent;
   border: none;
   color: white;
@@ -8,7 +9,8 @@
   padding: 0;
   width: 32px;
   height: 32px;
-  line-height: 1;/* Asegura que el icono esté centrado verticalmente */
+  line-height: 1;
+  /* Asegura que el icono esté centrado verticalmente */
   top: 10px;
   right: 10px;
   z-index: 1500;
@@ -68,7 +70,7 @@
 .signup>form>input,
 .login>form>input {
   width: 60%;
-  height: 35px;
+  height: 30px;
   background: #e0dede;
   justify-content: center;
   display: flex;
@@ -77,11 +79,10 @@
   outline: none;
   border-radius: 5px;
   margin: 5px auto;
-
 }
 
 .signup>form>input:first-of-type {
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 .login>form>button,
@@ -148,9 +149,10 @@
 .error {
   color: red;
   font-size: 0.9em;
-  margin-top: 5px;
+  margin-top: 3px;
   text-align: center;
   display: flex;
   justify-content: center;
-  width: 60%; /* Ajusta esto según el ancho de tus inputs */
+  width: 80%;
+  /* Ajusta esto según el ancho de tus inputs */
 }
